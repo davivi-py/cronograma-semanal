@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quadro da semana</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-left">
+      <h1>Quadro da semana</h1>
+      <div class="week-nav">
+        <button type="button" id="btn-prev-week" title="Semana anterior">←</button>
+        <span id="week-label"></span>
+        <button type="button" id="btn-next-week" title="Próxima semana">→</button>
+        <button type="button" id="btn-this-week">Hoje</button>
+      </div>
+    </div>
+    <div class="study-counter" id="study-counter">Estudo: 0h</div>
+    <div class="toolbar-actions">
+      <button type="button" id="btn-minimo" class="primary">Adicionar mínimo viável (20min)</button>
+      <button type="button" id="btn-duplicate">Duplicar essa semana pra próxima</button>
+      <button type="button" id="btn-export">Exportar semana</button>
+      <button type="button" id="btn-import">Importar semana</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden />
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="palette">
+      <h2>Tipos de bloco</h2>
+      <p class="hint">Arraste para a grade</p>
+      <div id="palette-list"></div>
+      <form id="new-type-form" class="new-type">
+        <h3>Novo tipo</h3>
+        <input type="text" id="new-type-name" placeholder="Nome" required />
+        <label class="color-row">
+          Cor
+          <input type="color" id="new-type-color" value="#64748b" />
+        </label>
+        <button type="submit">Criar tipo</button>
+      </form>
+    </aside>
+
+    <main class="board">
+      <div id="calendar" class="calendar"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button type="button" class="modal-close" id="modal-close">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>
