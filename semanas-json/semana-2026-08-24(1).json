@@ -1,0 +1,743 @@
+{
+  "version": 1,
+  "exportedAt": "2026-08-25T23:29:22.829Z",
+  "weekStart": "2026-08-24",
+  "types": [
+    {
+      "id": "ancora",
+      "name": "Âncora fixa",
+      "color": "#1e3a5f",
+      "border": "3px solid #0b1f38",
+      "textColor": "#fff",
+      "kind": "ancora"
+    },
+    {
+      "id": "estudo",
+      "name": "Estudo confiável",
+      "color": "#0f766e",
+      "border": "2px solid #115e59",
+      "textColor": "#fff",
+      "kind": "estudo"
+    },
+    {
+      "id": "estudo-bonus",
+      "name": "Estudo bônus",
+      "color": "#ccfbf1",
+      "border": "2px dashed #0f766e",
+      "textColor": "#134e4a",
+      "kind": "estudo-bonus"
+    },
+    {
+      "id": "yuki",
+      "name": "Passeio Yuki",
+      "color": "#f59e0b",
+      "border": "2px solid #b45309",
+      "textColor": "#1c1917",
+      "kind": "yuki"
+    },
+    {
+      "id": "sono",
+      "name": "Sono",
+      "color": "#7c3aed",
+      "border": "2px solid #5b21b6",
+      "textColor": "#fff",
+      "kind": "sono"
+    },
+    {
+      "id": "friccao",
+      "name": "Zona de fricção",
+      "color": "#dc2626",
+      "border": "2px solid #7f1d1d",
+      "textColor": "#fff",
+      "kind": "friccao",
+      "hatch": true
+    },
+    {
+      "id": "abertura",
+      "name": "Abertura sem meta",
+      "color": "#2dd4bf",
+      "border": "2px solid #0f766e",
+      "textColor": "#134e4a",
+      "kind": "abertura",
+      "defaultMinutes": 15
+    },
+    {
+      "id": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+      "name": "Almoçar",
+      "color": "#f5c211",
+      "border": "2px solid #1c1917",
+      "textColor": "#1c1917",
+      "kind": "custom"
+    },
+    {
+      "id": "8f6063d6-afc4-43fa-a1e5-b8441345ffb8",
+      "name": "Banho Yuki",
+      "color": "#c061cb",
+      "border": "2px solid #1c1917",
+      "textColor": "#fff",
+      "kind": "custom"
+    },
+    {
+      "id": "e69825ef-8532-4005-885c-72649e689d5c",
+      "name": "AED",
+      "color": "#57e389",
+      "border": "2px solid #1c1917",
+      "textColor": "#1c1917",
+      "kind": "custom"
+    },
+    {
+      "id": "1a217337-2ae9-41af-9114-afc30df7a76f",
+      "name": "ARGORQ",
+      "color": "#57e389",
+      "border": "2px solid #1c1917",
+      "textColor": "#1c1917",
+      "kind": "custom"
+    },
+    {
+      "id": "9b8a0fb2-9e0c-44d8-b2cb-0a44ae8dcd84",
+      "name": "ICC2",
+      "color": "#57e389",
+      "border": "2px solid #1c1917",
+      "textColor": "#1c1917",
+      "kind": "custom"
+    },
+    {
+      "id": "55959457-6820-4005-ac9d-995bf95eab6e",
+      "name": "Jantar",
+      "color": "#f5c211",
+      "border": "2px solid #1c1917",
+      "textColor": "#1c1917",
+      "kind": "custom"
+    }
+  ],
+  "weeks": {
+    "2026-08-24": [
+      {
+        "id": "07fd9d78-9820-4400-89a1-7e1fd2f164de",
+        "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+        "day": 2,
+        "slot": 12,
+        "minutes": 90,
+        "text": "Almoçar"
+      },
+      {
+        "id": "d69197fe-fd22-43b9-b78b-aa26f1a1d026",
+        "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+        "day": 3,
+        "slot": 12,
+        "minutes": 90,
+        "text": "Almoçar"
+      },
+      {
+        "id": "48b62906-b7be-406b-afbe-adb08804e23a",
+        "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+        "day": 4,
+        "slot": 12,
+        "minutes": 90,
+        "text": "Almoçar"
+      },
+      {
+        "id": "a3aa3e99-1361-409b-99bc-2ceec779311a",
+        "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+        "day": 0,
+        "slot": 12,
+        "minutes": 90,
+        "text": "Almoçar"
+      },
+      {
+        "id": "a75f8a18-aa34-4d04-a16d-240c31929786",
+        "typeId": "8f6063d6-afc4-43fa-a1e5-b8441345ffb8",
+        "day": 1,
+        "slot": 2,
+        "minutes": 150,
+        "text": "Banho Yuki"
+      },
+      {
+        "id": "91f8eb5f-42d2-418b-aebf-49e61c3743f1",
+        "typeId": "yuki",
+        "day": 1,
+        "slot": 15,
+        "minutes": 90,
+        "text": "Passeio Yuki"
+      },
+      {
+        "id": "11b9326b-5b1e-4ce5-9048-de5f345cba1a",
+        "typeId": "e69825ef-8532-4005-885c-72649e689d5c",
+        "day": 0,
+        "slot": 28,
+        "minutes": 120,
+        "text": "AED"
+      },
+      {
+        "id": "d7d54508-3663-4df0-9558-84edf8423320",
+        "typeId": "1a217337-2ae9-41af-9114-afc30df7a76f",
+        "day": 1,
+        "slot": 28,
+        "minutes": 120,
+        "text": "ARGORQ"
+      },
+      {
+        "id": "bf2effea-b7b8-4e67-9a7f-39c4b35323ce",
+        "typeId": "9b8a0fb2-9e0c-44d8-b2cb-0a44ae8dcd84",
+        "day": 2,
+        "slot": 28,
+        "minutes": 120,
+        "text": "ICC2"
+      },
+      {
+        "id": "ca3ba95e-7571-4765-a54c-a3e773994ae0",
+        "typeId": "e69825ef-8532-4005-885c-72649e689d5c",
+        "day": 3,
+        "slot": 24,
+        "minutes": 120,
+        "text": "AED"
+      },
+      {
+        "id": "914d9895-f0b5-4f9c-94e5-6682d5a7f300",
+        "typeId": "yuki",
+        "day": 0,
+        "slot": 15,
+        "minutes": 90,
+        "text": "Passeio Yuki"
+      },
+      {
+        "id": "e6fe4720-ca57-4b8b-aada-ce3b0386f1d5",
+        "typeId": "yuki",
+        "day": 2,
+        "slot": 15,
+        "minutes": 90,
+        "text": "Passeio Yuki"
+      },
+      {
+        "id": "b6b8449e-4e9f-4266-82a4-6e1966b535de",
+        "typeId": "yuki",
+        "day": 3,
+        "slot": 15,
+        "minutes": 90,
+        "text": "Passeio Yuki"
+      },
+      {
+        "id": "3f31a187-8011-4834-9db2-3e837796f5b5",
+        "typeId": "yuki",
+        "day": 4,
+        "slot": 15,
+        "minutes": 90,
+        "text": "Passeio Yuki"
+      },
+      {
+        "id": "cf75c35f-6135-45bd-b2af-b128256a02f8",
+        "typeId": "1a217337-2ae9-41af-9114-afc30df7a76f",
+        "day": 4,
+        "slot": 24,
+        "minutes": 120,
+        "text": "ARGORQ"
+      },
+      {
+        "id": "a9cf754f-b3b7-4dd2-8a62-ea5efd82cdbc",
+        "typeId": "9b8a0fb2-9e0c-44d8-b2cb-0a44ae8dcd84",
+        "day": 4,
+        "slot": 28,
+        "minutes": 120,
+        "text": "ICC2"
+      },
+      {
+        "id": "725266bd-6641-4f4f-a6ee-c05aece6c9a8",
+        "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+        "day": 0,
+        "slot": 22,
+        "minutes": 90,
+        "text": "Jantar"
+      },
+      {
+        "id": "34fc9d64-0dbb-4d65-8922-e2fd8318b3f5",
+        "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+        "day": 1,
+        "slot": 22,
+        "minutes": 90,
+        "text": "Jantar"
+      },
+      {
+        "id": "bcd1fcca-63e0-45fd-8d61-28755c26ed20",
+        "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+        "day": 2,
+        "slot": 22,
+        "minutes": 90,
+        "text": "Jantar"
+      },
+      {
+        "id": "b8ed8695-cfd9-45b7-ad26-967a7a1596fd",
+        "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+        "day": 3,
+        "slot": 22,
+        "minutes": 60,
+        "text": "Jantar"
+      },
+      {
+        "id": "c3352aa6-8653-44e2-bdea-aad41e412591",
+        "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+        "day": 4,
+        "slot": 22,
+        "minutes": 60,
+        "text": "Jantar"
+      },
+      {
+        "id": "479a6728-bc47-48f1-af52-350f08f8fbf0",
+        "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+        "day": 1,
+        "slot": 12,
+        "minutes": 90,
+        "text": "Almoçar"
+      },
+      {
+        "id": "84b65b80-5ed3-482e-8dba-ea57b2f1e317",
+        "typeId": "abertura",
+        "day": 0,
+        "slot": 4,
+        "minutes": 60,
+        "text": "Abertura sem meta"
+      },
+      {
+        "id": "d9a9f756-909e-494e-bcce-b4bfaf6e1f7c",
+        "typeId": "estudo-bonus",
+        "day": 0,
+        "slot": 6,
+        "minutes": 180,
+        "text": "Estudo bônus"
+      },
+      {
+        "id": "aff14d52-f5aa-4a97-a260-030c0c408e7c",
+        "typeId": "estudo-bonus",
+        "day": 1,
+        "slot": 7,
+        "minutes": 150,
+        "text": "Estudo bônus"
+      },
+      {
+        "id": "1616eb75-a3ab-47d8-9f75-2e5f8c69f132",
+        "typeId": "abertura",
+        "day": 2,
+        "slot": 4,
+        "minutes": 60,
+        "text": "Abertura sem meta"
+      },
+      {
+        "id": "e2c86b8e-0769-4cc1-8584-14337f4aeec0",
+        "typeId": "estudo-bonus",
+        "day": 2,
+        "slot": 6,
+        "minutes": 180,
+        "text": "Estudo bônus"
+      },
+      {
+        "id": "bb3e1581-282b-4712-acdd-49d23edba084",
+        "typeId": "abertura",
+        "day": 3,
+        "slot": 4,
+        "minutes": 60,
+        "text": "Abertura sem meta"
+      },
+      {
+        "id": "b00b70a8-48c7-48fc-9c86-5a8ca1ce0bc8",
+        "typeId": "abertura",
+        "day": 4,
+        "slot": 4,
+        "minutes": 60,
+        "text": "Abertura sem meta"
+      },
+      {
+        "id": "5102afad-7a2f-4701-8940-eb4c58462524",
+        "typeId": "estudo-bonus",
+        "day": 3,
+        "slot": 6,
+        "minutes": 180,
+        "text": "Estudo bônus"
+      },
+      {
+        "id": "31c1a342-732d-4153-a6e7-3883fff329bd",
+        "typeId": "estudo-bonus",
+        "day": 4,
+        "slot": 6,
+        "minutes": 180,
+        "text": "Estudo bônus"
+      },
+      {
+        "id": "39ff697c-378c-4035-8fbb-ee33a7425254",
+        "typeId": "estudo",
+        "day": 0,
+        "slot": 18,
+        "minutes": 120,
+        "text": "Estudo confiável"
+      },
+      {
+        "id": "5c1f4dd9-262e-4d19-bd01-37b724708ac5",
+        "typeId": "estudo",
+        "day": 1,
+        "slot": 18,
+        "minutes": 120,
+        "text": "Estudo confiável"
+      },
+      {
+        "id": "4b357cea-41f0-4f4d-81f3-e8671b3e9f47",
+        "typeId": "estudo",
+        "day": 2,
+        "slot": 18,
+        "minutes": 120,
+        "text": "Estudo confiável"
+      },
+      {
+        "id": "fae57312-4908-450c-b1aa-47bd9f5f9a15",
+        "typeId": "estudo",
+        "day": 3,
+        "slot": 18,
+        "minutes": 120,
+        "text": "Estudo confiável"
+      },
+      {
+        "id": "09fc3969-b87f-4bb2-ae0f-8bf09d0f1e38",
+        "typeId": "estudo",
+        "day": 4,
+        "slot": 18,
+        "minutes": 120,
+        "text": "Estudo confiável"
+      },
+      {
+        "id": "17681ef6-e560-438f-8bd0-5e5d24a24a52",
+        "typeId": "estudo",
+        "day": 0,
+        "slot": 25,
+        "minutes": 90,
+        "text": "Estudo confiável"
+      },
+      {
+        "id": "b9257d57-ed04-4325-b864-7b5e8cf91079",
+        "typeId": "estudo",
+        "day": 1,
+        "slot": 25,
+        "minutes": 90,
+        "text": "Estudo confiável"
+      },
+      {
+        "id": "50f15183-fbae-4d89-ab82-5ded6d9ac2e4",
+        "typeId": "estudo",
+        "day": 2,
+        "slot": 25,
+        "minutes": 90,
+        "text": "Estudo confiável"
+      }
+    ]
+  },
+  "currentWeekBlocks": [
+    {
+      "id": "07fd9d78-9820-4400-89a1-7e1fd2f164de",
+      "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+      "day": 2,
+      "slot": 12,
+      "minutes": 90,
+      "text": "Almoçar"
+    },
+    {
+      "id": "d69197fe-fd22-43b9-b78b-aa26f1a1d026",
+      "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+      "day": 3,
+      "slot": 12,
+      "minutes": 90,
+      "text": "Almoçar"
+    },
+    {
+      "id": "48b62906-b7be-406b-afbe-adb08804e23a",
+      "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+      "day": 4,
+      "slot": 12,
+      "minutes": 90,
+      "text": "Almoçar"
+    },
+    {
+      "id": "a3aa3e99-1361-409b-99bc-2ceec779311a",
+      "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+      "day": 0,
+      "slot": 12,
+      "minutes": 90,
+      "text": "Almoçar"
+    },
+    {
+      "id": "a75f8a18-aa34-4d04-a16d-240c31929786",
+      "typeId": "8f6063d6-afc4-43fa-a1e5-b8441345ffb8",
+      "day": 1,
+      "slot": 2,
+      "minutes": 150,
+      "text": "Banho Yuki"
+    },
+    {
+      "id": "91f8eb5f-42d2-418b-aebf-49e61c3743f1",
+      "typeId": "yuki",
+      "day": 1,
+      "slot": 15,
+      "minutes": 90,
+      "text": "Passeio Yuki"
+    },
+    {
+      "id": "11b9326b-5b1e-4ce5-9048-de5f345cba1a",
+      "typeId": "e69825ef-8532-4005-885c-72649e689d5c",
+      "day": 0,
+      "slot": 28,
+      "minutes": 120,
+      "text": "AED"
+    },
+    {
+      "id": "d7d54508-3663-4df0-9558-84edf8423320",
+      "typeId": "1a217337-2ae9-41af-9114-afc30df7a76f",
+      "day": 1,
+      "slot": 28,
+      "minutes": 120,
+      "text": "ARGORQ"
+    },
+    {
+      "id": "bf2effea-b7b8-4e67-9a7f-39c4b35323ce",
+      "typeId": "9b8a0fb2-9e0c-44d8-b2cb-0a44ae8dcd84",
+      "day": 2,
+      "slot": 28,
+      "minutes": 120,
+      "text": "ICC2"
+    },
+    {
+      "id": "ca3ba95e-7571-4765-a54c-a3e773994ae0",
+      "typeId": "e69825ef-8532-4005-885c-72649e689d5c",
+      "day": 3,
+      "slot": 24,
+      "minutes": 120,
+      "text": "AED"
+    },
+    {
+      "id": "914d9895-f0b5-4f9c-94e5-6682d5a7f300",
+      "typeId": "yuki",
+      "day": 0,
+      "slot": 15,
+      "minutes": 90,
+      "text": "Passeio Yuki"
+    },
+    {
+      "id": "e6fe4720-ca57-4b8b-aada-ce3b0386f1d5",
+      "typeId": "yuki",
+      "day": 2,
+      "slot": 15,
+      "minutes": 90,
+      "text": "Passeio Yuki"
+    },
+    {
+      "id": "b6b8449e-4e9f-4266-82a4-6e1966b535de",
+      "typeId": "yuki",
+      "day": 3,
+      "slot": 15,
+      "minutes": 90,
+      "text": "Passeio Yuki"
+    },
+    {
+      "id": "3f31a187-8011-4834-9db2-3e837796f5b5",
+      "typeId": "yuki",
+      "day": 4,
+      "slot": 15,
+      "minutes": 90,
+      "text": "Passeio Yuki"
+    },
+    {
+      "id": "cf75c35f-6135-45bd-b2af-b128256a02f8",
+      "typeId": "1a217337-2ae9-41af-9114-afc30df7a76f",
+      "day": 4,
+      "slot": 24,
+      "minutes": 120,
+      "text": "ARGORQ"
+    },
+    {
+      "id": "a9cf754f-b3b7-4dd2-8a62-ea5efd82cdbc",
+      "typeId": "9b8a0fb2-9e0c-44d8-b2cb-0a44ae8dcd84",
+      "day": 4,
+      "slot": 28,
+      "minutes": 120,
+      "text": "ICC2"
+    },
+    {
+      "id": "725266bd-6641-4f4f-a6ee-c05aece6c9a8",
+      "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+      "day": 0,
+      "slot": 22,
+      "minutes": 90,
+      "text": "Jantar"
+    },
+    {
+      "id": "34fc9d64-0dbb-4d65-8922-e2fd8318b3f5",
+      "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+      "day": 1,
+      "slot": 22,
+      "minutes": 90,
+      "text": "Jantar"
+    },
+    {
+      "id": "bcd1fcca-63e0-45fd-8d61-28755c26ed20",
+      "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+      "day": 2,
+      "slot": 22,
+      "minutes": 90,
+      "text": "Jantar"
+    },
+    {
+      "id": "b8ed8695-cfd9-45b7-ad26-967a7a1596fd",
+      "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+      "day": 3,
+      "slot": 22,
+      "minutes": 60,
+      "text": "Jantar"
+    },
+    {
+      "id": "c3352aa6-8653-44e2-bdea-aad41e412591",
+      "typeId": "55959457-6820-4005-ac9d-995bf95eab6e",
+      "day": 4,
+      "slot": 22,
+      "minutes": 60,
+      "text": "Jantar"
+    },
+    {
+      "id": "479a6728-bc47-48f1-af52-350f08f8fbf0",
+      "typeId": "4ebb5332-0ff8-4dd7-8abd-c31675a84564",
+      "day": 1,
+      "slot": 12,
+      "minutes": 90,
+      "text": "Almoçar"
+    },
+    {
+      "id": "84b65b80-5ed3-482e-8dba-ea57b2f1e317",
+      "typeId": "abertura",
+      "day": 0,
+      "slot": 4,
+      "minutes": 60,
+      "text": "Abertura sem meta"
+    },
+    {
+      "id": "d9a9f756-909e-494e-bcce-b4bfaf6e1f7c",
+      "typeId": "estudo-bonus",
+      "day": 0,
+      "slot": 6,
+      "minutes": 180,
+      "text": "Estudo bônus"
+    },
+    {
+      "id": "aff14d52-f5aa-4a97-a260-030c0c408e7c",
+      "typeId": "estudo-bonus",
+      "day": 1,
+      "slot": 7,
+      "minutes": 150,
+      "text": "Estudo bônus"
+    },
+    {
+      "id": "1616eb75-a3ab-47d8-9f75-2e5f8c69f132",
+      "typeId": "abertura",
+      "day": 2,
+      "slot": 4,
+      "minutes": 60,
+      "text": "Abertura sem meta"
+    },
+    {
+      "id": "e2c86b8e-0769-4cc1-8584-14337f4aeec0",
+      "typeId": "estudo-bonus",
+      "day": 2,
+      "slot": 6,
+      "minutes": 180,
+      "text": "Estudo bônus"
+    },
+    {
+      "id": "bb3e1581-282b-4712-acdd-49d23edba084",
+      "typeId": "abertura",
+      "day": 3,
+      "slot": 4,
+      "minutes": 60,
+      "text": "Abertura sem meta"
+    },
+    {
+      "id": "b00b70a8-48c7-48fc-9c86-5a8ca1ce0bc8",
+      "typeId": "abertura",
+      "day": 4,
+      "slot": 4,
+      "minutes": 60,
+      "text": "Abertura sem meta"
+    },
+    {
+      "id": "5102afad-7a2f-4701-8940-eb4c58462524",
+      "typeId": "estudo-bonus",
+      "day": 3,
+      "slot": 6,
+      "minutes": 180,
+      "text": "Estudo bônus"
+    },
+    {
+      "id": "31c1a342-732d-4153-a6e7-3883fff329bd",
+      "typeId": "estudo-bonus",
+      "day": 4,
+      "slot": 6,
+      "minutes": 180,
+      "text": "Estudo bônus"
+    },
+    {
+      "id": "39ff697c-378c-4035-8fbb-ee33a7425254",
+      "typeId": "estudo",
+      "day": 0,
+      "slot": 18,
+      "minutes": 120,
+      "text": "Estudo confiável"
+    },
+    {
+      "id": "5c1f4dd9-262e-4d19-bd01-37b724708ac5",
+      "typeId": "estudo",
+      "day": 1,
+      "slot": 18,
+      "minutes": 120,
+      "text": "Estudo confiável"
+    },
+    {
+      "id": "4b357cea-41f0-4f4d-81f3-e8671b3e9f47",
+      "typeId": "estudo",
+      "day": 2,
+      "slot": 18,
+      "minutes": 120,
+      "text": "Estudo confiável"
+    },
+    {
+      "id": "fae57312-4908-450c-b1aa-47bd9f5f9a15",
+      "typeId": "estudo",
+      "day": 3,
+      "slot": 18,
+      "minutes": 120,
+      "text": "Estudo confiável"
+    },
+    {
+      "id": "09fc3969-b87f-4bb2-ae0f-8bf09d0f1e38",
+      "typeId": "estudo",
+      "day": 4,
+      "slot": 18,
+      "minutes": 120,
+      "text": "Estudo confiável"
+    },
+    {
+      "id": "17681ef6-e560-438f-8bd0-5e5d24a24a52",
+      "typeId": "estudo",
+      "day": 0,
+      "slot": 25,
+      "minutes": 90,
+      "text": "Estudo confiável"
+    },
+    {
+      "id": "b9257d57-ed04-4325-b864-7b5e8cf91079",
+      "typeId": "estudo",
+      "day": 1,
+      "slot": 25,
+      "minutes": 90,
+      "text": "Estudo confiável"
+    },
+    {
+      "id": "50f15183-fbae-4d89-ab82-5ded6d9ac2e4",
+      "typeId": "estudo",
+      "day": 2,
+      "slot": 25,
+      "minutes": 90,
+      "text": "Estudo confiável"
+    }
+  ]
+}
