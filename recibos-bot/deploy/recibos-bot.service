@@ -1,0 +1,32 @@
+[Unit]
+Description=recibos-bot (webhook WhatsApp Cloud API)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=recibos
+Group=recibos
+WorkingDirectory=/opt/recibos-bot
+EnvironmentFile=/etc/recibos-bot.env
+ExecStart=/opt/recibos-bot/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1 --proxy-headers --forwarded-allow-ips 127.0.0.1
+Restart=always
+RestartSec=5
+
+# Banco em /var/lib/recibos-bot (criado pelo systemd com dono = recibos)
+StateDirectory=recibos-bot
+StateDirectoryMode=0700
+
+# Endurecimento
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

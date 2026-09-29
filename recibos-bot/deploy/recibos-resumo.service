@@ -1,0 +1,17 @@
+[Unit]
+Description=recibos-bot: envia o resumo do mês anterior (só para o OWNER_PHONE)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=recibos
+Group=recibos
+WorkingDirectory=/opt/recibos-bot
+EnvironmentFile=/etc/recibos-bot.env
+ExecStart=/opt/recibos-bot/.venv/bin/python -m app.cli resumo --mes-anterior --enviar
+StateDirectory=recibos-bot
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true

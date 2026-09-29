@@ -1,0 +1,15 @@
+# /etc/caddy/Caddyfile — troque pelo seu domínio (precisa apontar para o IP da instância).
+# O Caddy tira e renova o certificado Let's Encrypt sozinho.
+recibos.seudominio.com.br {
+	encode gzip
+
+	handle /webhook {
+		reverse_proxy 127.0.0.1:8000
+	}
+	handle /healthz {
+		reverse_proxy 127.0.0.1:8000
+	}
+	handle {
+		respond 404
+	}
+}

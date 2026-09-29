@@ -1,0 +1,11 @@
+[Unit]
+Description=recibos-bot: resumo mensal todo dia 1 às 09:00 (horário de Brasília)
+
+[Timer]
+OnCalendar=*-*-01 09:00:00 America/Sao_Paulo
+# Se a máquina estava desligada no horário, roda assim que ligar
+# (o bot guarda que já enviou, então não duplica).
+Persistent=true
+
+[Install]
+WantedBy=timers.target
