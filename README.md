@@ -36,6 +36,10 @@ Em `artifact/quadro-da-semana.html` fica a versão que eu uso no dia a dia. Ela 
 - O contador do topo mostra **horas feitas de horas planejadas** na semana
 - O **resumo** mostra quanto do plano foi cumprido por prioridade, as últimas 4 semanas, o rendimento por turno, por dia e por tamanho de bloco, e os motivos mais comuns
 
+<img src="docs/quadro-registro.png" alt="Lista para registrar os blocos que já passaram como feito ou não feito" width="300">
+
+![Resumo do tracking com o plano cumprido por prioridade e as últimas semanas](docs/quadro-resumo.png)
+
 **Entregas**
 - Lista de trabalhos e tarefas com matéria e prazo, separada em atrasadas, próximos 7 dias e mais pra frente
 - **Colar do Moodle**: cole o texto da página de tarefas e as entregas com vencimento são reconhecidas sozinhas
