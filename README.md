@@ -25,6 +25,7 @@ Em `artifact/quadro-da-semana.html` fica uma segunda versão, feita para usar em
 - **Sincroniza** entre celular e computador (roda como Artifact no claude.ai, com banco de documentos da própria plataforma)
 - **Pensada para o celular**: visão por dia, colocar blocos com toque, arrastar com toque longo e editar texto, dia, horário e duração numa janela
 - **Agora / Depois**: mostra o bloco atual, o próximo e quanto tempo falta, com uma linha marcando a hora atual
+- **Tracking dos blocos de estudo**: depois que um bloco passa, dá pra marcar como feito ou não feito (com motivo opcional), e o resumo mostra quanto do plano foi cumprido por semana e por prioridade
 - **Modo escuro** automático
 - Correções em relação à versão original:
   - a importação mescla as semanas em vez de apagar as outras;
