@@ -25,6 +25,7 @@ Em `artifact/quadro-da-semana.html` fica a versão que eu uso no dia a dia. Ela 
 **Uso em qualquer aparelho**
 - **Sincroniza** entre celular e computador, usando o banco de documentos da própria plataforma
 - **Pensada para o celular**: visão por dia, colocar blocos com toque, arrastar com toque longo e editar texto, dia, horário e duração numa janela
+- **Visão de mês**: grade do mês inteiro (Dia | Semana | Mês) com as entregas e os blocos de cada dia, sem Sono e Passeio Yuki; tocar num dia abre a visão Dia. É só leitura, e o botão "Mostrar blocos" deixa só as entregas
 - **Agora / Depois**: mostra o bloco atual, o próximo e quanto tempo falta, com uma linha marcando a hora atual
 - **Modo escuro** automático
 - **Paletas de cores**: nove combinações prontas que recolorem todos os tipos de uma vez, e dá pra ajustar a cor de cada tipo
