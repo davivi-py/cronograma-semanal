@@ -29,7 +29,14 @@ Em `artifact/quadro-da-semana.html` fica a versão que eu uso no dia a dia. Ela 
 - **Modo escuro** automático
 - **Paletas de cores**: nove combinações prontas que recolorem todos os tipos de uma vez, e dá pra ajustar a cor de cada tipo
 
+**Barra de tipos em grupos**
+- Os tipos ficam em três grupos que abrem e fecham: **Fixos** (refeições, aulas, rotina), **Estudo** (uma matéria por tipo) e **Outros**
+- Os blocos fixos aparecem no quadro num tom neutro só, para o estudo se destacar em cor
+- O grupo de cada tipo é escolhido em **Tipos…**
+
 **Tracking dos blocos de estudo**
+- **+ Já fiz** registra um estudo que aconteceu fora do plano: matéria, dia, início, término e o que foi feito. Ele entra no quadro como feito e conta como **extra**, sem mexer nas horas planejadas
+- Na ficha do bloco, **Feito / Não feito** fica sempre à vista; início, término, resultados e providências ficam em **Detalhes**, e as entregas da matéria numa seção recolhida
 - Cada tipo de bloco pode ter uma **prioridade** (Graduação, DS/IC ou CodeLabs); só os blocos com prioridade entram no tracking
 - Depois que um bloco passa, ele ganha um **?** e dá pra marcar como **feito** ou **não feito**, com um motivo opcional (cansaço, distração, imprevisto…)
 - O botão **Registrar N blocos** junta numa lista tudo o que já passou e ainda não foi marcado
@@ -108,4 +115,4 @@ Na versão sincronizada, o backup também leva as entregas (`tasks`), e cada blo
   "log": { "s": "pulei", "r": "imprevisto", "at": "2026-10-26T22:00:00.000Z" } }
 ```
 
-`s` é `feito` ou `pulei` (não feito); `r` é o motivo, quando tem. Registros antigos podem ter `parcial` ou `troquei`.
+`s` é `feito` ou `pulei` (não feito); `r` é o motivo, quando tem. O `log` também guarda a sessão (`inicio`, `termino`, `resultado`, `providencia`). Um bloco criado pelo **+ Já fiz** leva `"extra": true`, e cada tipo pode ter um `group` (`fixo`, `estudo` ou `outros`). Registros antigos podem ter `parcial` ou `troquei`.

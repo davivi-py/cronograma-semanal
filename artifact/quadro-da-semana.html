@@ -42,6 +42,10 @@
   --cat-grad: #4f5fc4;
   --cat-ds: #d0408a;
   --cat-code: #0f8a7e;
+  /* blocos fixos (rotina e aulas): um tom neutro só, pra o estudo aparecer em cor */
+  --fixed-bg: #e1e4ec;
+  --fixed-line: #9aa3b8;
+  --fixed-ink: #2b3245;
   --slot-h: 28px;
   --time-w: 50px;
   --head-h: 42px;
@@ -84,6 +88,9 @@
     --cat-grad: #9aa6f2;
     --cat-ds: #f08cc0;
     --cat-code: #4fd1c0;
+  --fixed-bg: #2a2e3a;
+  --fixed-line: #505870;
+  --fixed-ink: #c9cfdd;
   }
 }
 :root[data-theme="dark"] {
@@ -121,6 +128,9 @@
   --cat-grad: #9aa6f2;
   --cat-ds: #f08cc0;
   --cat-code: #4fd1c0;
+  --fixed-bg: #2a2e3a;
+  --fixed-line: #505870;
+  --fixed-ink: #c9cfdd;
 }
 
 * { box-sizing: border-box; }
@@ -507,9 +517,9 @@ body.dragging, body.dragging * { cursor: grabbing !important; }
 .timer-done { font-weight: 700; color: var(--danger); text-align: center; margin: 0; }
 .quote { font-size: 1.1rem; margin: 0; }
 .type-list { display: flex; flex-direction: column; gap: 6px; }
-.type-row { display: flex; align-items: center; gap: 10px; padding: 6px 4px; border-bottom: 1px solid var(--line); }
+.type-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 6px 4px; border-bottom: 1px solid var(--line); }
 .type-row .sw { width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0; }
-.type-row .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.type-row .nm { flex: 1 1 7em; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .type-row .tag { font-size: 0.72rem; color: var(--muted); }
 .type-row.archived .nm { color: var(--muted); text-decoration: line-through; }
 .type-row button { min-height: 30px; padding: 3px 10px; font-size: 0.82rem; }
@@ -661,8 +671,6 @@ textarea.json { width: 100%; min-height: 160px; font: 0.75rem ui-monospace, Menl
 .delta.over { background: var(--st-part-bg); color: var(--st-part); }
 .delta.under { background: var(--st-swap-bg); color: var(--st-swap); }
 .delta.even { background: var(--st-done-bg); color: var(--st-done); }
-.sess-more > summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; padding: 2px 0; }
-.sess-more[open] > summary { margin-bottom: 6px; }
 .prov-list { display: flex; flex-direction: column; }
 .prov-list .task-main { padding: 7px 0; border-bottom: 1px solid var(--line); }
 @media (max-width: 420px) { .sess-times { grid-template-columns: 1fr; } }
@@ -820,6 +828,69 @@ body.view-month .layout { grid-template-columns: 1fr; grid-template-rows: 1fr; }
 .calendar.month.compact .m-num { min-width: 26px; height: 26px; padding: 0 4px; font-size: 0.88rem; }
 .calendar.month.compact .m-head { font-size: 0.68rem; letter-spacing: 0.04em; }
 
+/* ---------- grupos da barra de tipos ---------- */
+.chips { gap: 10px; }
+.grp { display: flex; flex-direction: column; gap: 7px; }
+.grp-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 30px;
+  padding: 3px 6px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-weight: 700;
+}
+.grp-head:hover { background: var(--surface-2); color: var(--ink); }
+.grp-head .car { width: 1em; font-size: 0.9rem; letter-spacing: 0; }
+.grp-head .n { margin-left: auto; font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.grp-body { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { width: auto; max-width: 100%; padding: 6px 10px; }
+.block.extra { border-style: dashed !important; }
+.tag-extra {
+  font: 700 0.78rem/1.2 "Patrick Hand", "Segoe Print", ui-rounded, system-ui, sans-serif;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--st-done-bg);
+  color: var(--st-done);
+  white-space: nowrap;
+}
+/* seções que abrem e fecham dentro das fichas */
+.fold { border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); }
+.fold > summary, .sess-more > summary {
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  list-style: none;
+}
+.fold > summary { padding: 9px 12px; }
+.sess-more > summary { padding: 2px 0; }
+.fold > summary::-webkit-details-marker, .sess-more > summary::-webkit-details-marker { display: none; }
+.fold > summary::before, .sess-more > summary::before { content: "▸"; color: var(--muted); flex-shrink: 0; }
+.fold[open] > summary::before, .sess-more[open] > summary::before { content: "▾"; }
+summary .lb { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; flex-shrink: 0; }
+summary .sm { color: var(--muted); font-size: 0.9rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sess-more[open] > summary { margin-bottom: 8px; }
+.sess-more[open] > summary .sm { display: none; }
+.fold-body { padding: 0 12px 10px; display: flex; flex-direction: column; }
+.row3 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 10px; align-items: end; }
+.row3 .stepper { gap: 6px; }
+.row3 .stepper button { width: 36px; padding: 0; }
+.row3 .stepper output { min-width: 5ch; }
+.warn-box { margin: 0; border: 1px solid var(--warn); border-radius: 10px; padding: 10px 12px; font-size: 0.92rem; }
+@media (max-width: 420px) {
+  .row3 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .row3 > :last-child { grid-column: 1 / -1; }
+}
+
 /* ---------- phone ---------- */
 @media (max-width: 760px) {
   .bar { padding: 8px 16px; gap: 8px 10px; }
@@ -843,11 +914,14 @@ body.view-month .layout { grid-template-columns: 1fr; grid-template-rows: 1fr; }
   .palette-head h2, .hint { display: none; }
   .palette-head { order: 2; flex-shrink: 0; }
   .chips { flex-direction: row; gap: 6px; }
+  .grp, .grp-body { display: contents; }
+  .grp-head { width: auto; flex-shrink: 0; white-space: nowrap; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+  .grp-head .n { margin-left: 2px; }
   .chip { width: auto; white-space: nowrap; flex-shrink: 0; padding: 7px 10px; font-size: 0.8rem; }
   .board-head { padding: 6px 16px; }
   .now { padding: 6px 16px; font-size: 0.85rem; }
   :root { --time-w: 44px; }
-  .actions { width: 100%; margin-left: 0; }
+  .actions { width: 100%; margin-left: 0; flex-wrap: wrap; }
   .actions .long { display: none; }
   .actions button, .menu > summary { padding: 6px 10px; }
 }
@@ -865,6 +939,7 @@ body.view-month .layout { grid-template-columns: 1fr; grid-template-rows: 1fr; }
   <button type="button" class="study" id="study" aria-label="Abrir o resumo do tracking">Estudo: 0h</button>
   <div class="actions">
     <button type="button" id="btn-tasks">Entregas<span class="tbadge" id="tasks-badge" hidden></span></button>
+    <button type="button" id="btn-done" aria-label="Registrar um estudo que eu já fiz">+ Já fiz</button>
     <button type="button" class="go" id="btn-minimo" aria-label="Adicionar mínimo viável">+ Mínimo<span class="long"> viável</span></button>
     <details class="menu" id="menu">
       <summary>Semana ▾</summary>
@@ -944,6 +1019,14 @@ const CATS = [
   { id: "ds", name: "Data Science / IC", short: "DS/IC" },
   { id: "codelabs", name: "CodeLabs", short: "CodeLabs" },
 ];
+// Grupos da barra de tipos. Fixos = rotina e aulas (aparecem num tom neutro só);
+// Estudo = uma matéria por tipo, com tracking; Outros = o resto.
+const GROUPS = [
+  { id: "fixo", name: "Fixos" },
+  { id: "estudo", name: "Estudo" },
+  { id: "outros", name: "Outros" },
+];
+const OTHER_KINDS = ["estudo", "estudo-bonus", "friccao", "abertura", "minimo"];
 const CAT_NAME = { grad: "Graduação", ds: "DS/IC", codelabs: "CodeLabs", outro: "outra coisa" };
 // score: o horário rendeu? plan: o plano daquela prioridade foi cumprido?
 // Só Feito / Não feito nos botões. Parcial e Troquei ficam pra ler registros antigos.
@@ -1133,6 +1216,7 @@ const state = {
   selDay: ln0.day,
   palette: null,
   tasks: [],
+  grpOpen: { fixo: false, estudo: true, outros: false, ...(prefs.grpOpen || {}) },
   palClosed: typeof prefs.palClosed === "boolean" ? prefs.palClosed : window.innerWidth < 760,
 };
 let autoPaletteDone = false;
@@ -1147,7 +1231,7 @@ const weekReady = {};
 const weekWaiters = {};
 
 // tela estreita sempre abre em Dia; a escolha só é lembrada em tela larga
-function savePrefs() { lsSet(PREFS_KEY, { ...prefs, view: window.innerWidth < 760 ? prefs.view : state.view, palClosed: !!state.palClosed, monthBlocks: !!state.monthBlocks }); }
+function savePrefs() { lsSet(PREFS_KEY, { ...prefs, view: window.innerWidth < 760 ? prefs.view : state.view, palClosed: !!state.palClosed, grpOpen: state.grpOpen, monthBlocks: !!state.monthBlocks }); }
 function blocksOf(wk) { return state.weeks[wk] || (state.weeks[wk] = []); }
 function currentBlocks() { return blocksOf(state.weekStart); }
 function typeById(id) { return state.types.find((t) => t.id === id); }
@@ -1205,6 +1289,19 @@ function catOf(t) {
   return "";
 }
 function blockCat(b) { return catOf(typeById(b.typeId)); }
+// Sem grupo escolhido: tipo com tracking é Estudo, os de técnica vão pra Outros, o resto é Fixo.
+function groupOf(t) {
+  if (!t || t === FALLBACK_TYPE) return "outros";
+  if (GROUPS.some((g) => g.id === t.group)) return t.group;
+  if (OTHER_KINDS.includes(t.kind)) return "outros";
+  if (CATS.some((c) => c.id === catOf(t))) return "estudo";
+  return "fixo";
+}
+// aparência do bloco e do chip: fixos num tom neutro, o resto na cor do tipo
+function skin(t) {
+  if (groupOf(t) === "fixo") return { background: "var(--fixed-bg)", border: `${t.kind === "ancora" ? 3 : 2}px solid var(--fixed-line)`, color: "var(--fixed-ink)" };
+  return { background: t.color, border: t.border, color: t.textColor || "#111" };
+}
 // Registro de sessão dentro do log: inicio e termino ("HH:MM"), resultado e providencia (texto).
 // A duração real é calculada, nunca salva.
 const SESSION_KEYS = ["inicio", "termino", "resultado", "providencia"];
@@ -1237,14 +1334,16 @@ function fmtH(min) {
   return (Number.isInteger(v) ? String(v) : v.toFixed(1).replace(".", ",")) + "h";
 }
 function studyStats(wk = state.weekStart) {
-  let planned = 0, done = 0;
+  let planned = 0, done = 0, extra = 0;
   for (const b of blocksOf(wk)) {
     if (!tracked(b)) continue;
-    planned += b.minutes;
     const st = b.log && statusById(b.log.s);
+    // "+ Já fiz": conta à parte, pra não mascarar quanto do plano foi cumprido
+    if (b.extra) { if (st) extra += b.minutes * st.score; continue; }
+    planned += b.minutes;
     if (st) done += b.minutes * st.score;
   }
-  return { planned, done };
+  return { planned, done, extra };
 }
 function setLog(wk, id, patch) {
   if (!editable()) return null;
@@ -1490,7 +1589,7 @@ async function duplicateWeek() {
     if (!ok) return;
   }
   // a cópia leva o plano, não os registros de como foi
-  state.weeks[next] = src.map(({ log, ...b }) => ({ ...b, id: uid() }));
+  state.weeks[next] = src.filter((b) => !b.extra).map(({ log, ...b }) => ({ ...b, id: uid() }));
   saveWeek(next);
   toast("Semana duplicada. Use → para ver a próxima.");
 }
@@ -1661,7 +1760,14 @@ function openBlockSheet(id) {
   text.value = b.text;
   const full = h("div", { class: "full", "aria-label": "Texto completo do bloco" }, fullTextEl(b.text));
   const grow = () => { text.style.height = "auto"; text.style.height = text.scrollHeight + 2 + "px"; };
-  text.addEventListener("input", () => { grow(); full.replaceChildren(...fullTextEl(text.value.replace(/\s*\n\s*/g, " ") || t.name)); });
+  // o resumo em linhas só aparece quando o texto tem partes separadas por " · "
+  const paintFull = () => {
+    const v = text.value.replace(/\s*\n\s*/g, " ") || t.name;
+    full.hidden = !splitText(v).lines.length;
+    full.replaceChildren(...fullTextEl(v));
+  };
+  paintFull();
+  text.addEventListener("input", () => { grow(); paintFull(); });
   const daySel = h("select", { id: "sheet-day" }, DAY_FULL.map((d, i) => h("option", { value: i }, d)));
   daySel.value = String(b.day);
   const startSel = h("select", { id: "sheet-start" }, Array.from({ length: NUM_SLOTS }, (_, s) => h("option", { value: s }, slotLabel(s))));
@@ -1673,11 +1779,12 @@ function openBlockSheet(id) {
   if (t.kind === "friccao") extra = frictionTimer();
   if (t.kind === "abertura") extra = h("p", { class: "quote" }, "Só abrir o caderno. Nenhuma meta além disso.");
   const rel = relatedTasks(t);
-  const relBox = rel.length ? h("div", { class: "timer-box" },
-    h("div", { class: "field" }, h("span", null, "Entregas dessa matéria")),
-    rel.slice(0, 4).map((x) => h("button", { type: "button", class: "task-main rel-task " + urgency(x), onclick: () => openTaskEdit(x.id) },
+  // recolhido; abre sozinho quando alguma entrega está atrasada ou vence em até 3 dias
+  const relBox = rel.length ? h("details", { class: "fold", open: taskDate(rel[0]) - Date.now() < 3 * 86400000 },
+    h("summary", null, h("span", { class: "lb" }, `Entregas · ${rel.length}`), h("span", { class: "sm" }, `próxima: ${dueRel(rel[0])}`)),
+    h("div", { class: "fold-body" }, rel.slice(0, 4).map((x) => h("button", { type: "button", class: "task-main rel-task " + urgency(x), onclick: () => openTaskEdit(x.id) },
       h("span", { class: "task-title" }, x.title),
-      h("span", { class: "task-meta" }, `${fmtDue(x)} · ${dueRel(x)}`)))
+      h("span", { class: "task-meta" }, `${fmtDue(x)} · ${dueRel(x)}`))))
   ) : null;
 
   const wk = state.weekStart;
@@ -1686,7 +1793,7 @@ function openBlockSheet(id) {
     const ln = logicalNow();
     logEl = blockStarted(wk, b, ln) || (wk === ln.week && b.day === ln.day)
       ? logControls(wk, b.id)
-      : h("div", { class: "log-box" }, h("p", { class: "later" }, "Quando o bloco começar, dá pra registrar aqui como foi."));
+      : h("p", { class: "muted" }, "Quando o bloco começar, dá pra registrar aqui como foi.");
   }
 
   const save = () => {
@@ -1706,23 +1813,24 @@ function openBlockSheet(id) {
   text.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); save(); } });
 
   openModal(h("div", { style: { display: "contents" } },
-    h("h3", null, h("span", { class: "sw", style: { background: t.color } }), t.name),
+    h("h3", null, h("span", { class: "sw", style: { background: t.color } }), t.name,
+      b.extra ? h("span", { class: "tag-extra" }, "fora do plano") : null),
+    h("label", { class: "field" }, h("span", null, "O que é"), text),
     full,
+    h("div", { class: "row3" },
+      h("label", { class: "field" }, h("span", null, "Dia"), daySel),
+      h("label", { class: "field" }, h("span", null, "Início"), startSel),
+      h("div", { class: "field" }, h("span", null, "Duração"),
+        h("div", { class: "stepper" },
+          h("button", { type: "button", "aria-label": "Menos 15 minutos", onclick: () => step(-STEP) }, "−"),
+          out,
+          h("button", { type: "button", "aria-label": "Mais 15 minutos", onclick: () => step(STEP) }, "+")
+        )
+      )
+    ),
     logEl,
     extra,
     relBox,
-    h("label", { class: "field" }, h("span", null, "Texto"), text),
-    h("div", { class: "row2" },
-      h("label", { class: "field" }, h("span", null, "Dia"), daySel),
-      h("label", { class: "field" }, h("span", null, "Início"), startSel)
-    ),
-    h("div", { class: "field" }, h("span", null, "Duração"),
-      h("div", { class: "stepper" },
-        h("button", { type: "button", "aria-label": "Menos 15 minutos", onclick: () => step(-STEP) }, "−"),
-        out,
-        h("button", { type: "button", "aria-label": "Mais 15 minutos", onclick: () => step(STEP) }, "+")
-      )
-    ),
     h("div", { class: "btn-row" },
       h("button", { type: "button", class: "danger", onclick: () => { if (readonly) return; removeBlock(b.id); closeModal(); } }, "Excluir"),
       h("div", { class: "end" },
@@ -1794,10 +1902,12 @@ function logControls(wk, id, opts = {}) {
   const b0 = blocksOf(wk).find((x) => x.id === id);
   if (!b0) return box;
   // a parte da sessão é montada uma vez só, pra não perder o foco enquanto digita
-  const sess = sessionControls(wk, id);
-  box.append(top, opts.compact
-    ? h("details", { class: "sess-more", open: hasSession(b0.log) }, h("summary", null, "Sessão: início, término, resultados"), sess)
-    : sess);
+  // e fica recolhida: o resumo do que já foi anotado aparece na linha do "Detalhes"
+  const sm = h("span", { class: "sm" });
+  const paintSm = () => { sm.textContent = sessSummary((blocksOf(wk).find((x) => x.id === id) || {}).log); };
+  const sess = sessionControls(wk, id, paintSm);
+  paintSm();
+  box.append(top, h("details", { class: "sess-more" }, h("summary", null, h("span", { class: "lb" }, "Detalhes"), sm), sess));
   const paint = () => {
     const b = blocksOf(wk).find((x) => x.id === id);
     if (!b) { box.replaceChildren(); return; }
@@ -1835,13 +1945,24 @@ function logControls(wk, id, opts = {}) {
   return box;
 }
 
+function sessSummary(log) {
+  const l = log || {};
+  const bits = [];
+  if (l.inicio && l.termino) bits.push(`${l.inicio}–${l.termino}`);
+  else if (l.inicio) bits.push(`começou ${l.inicio}`);
+  else if (l.termino) bits.push(`terminou ${l.termino}`);
+  if (l.resultado) bits.push(l.resultado);
+  if (l.providencia) bits.push("falta: " + l.providencia);
+  return bits.join(" · ") || "início, término, resultados, providências";
+}
+
 // Tabela de Controle de Sessão: estimado (do bloco), início, término, duração real, resultados, providências.
-function sessionControls(wk, id) {
+function sessionControls(wk, id, onChange) {
   const cur = () => blocksOf(wk).find((x) => x.id === id);
   const log0 = (cur() || {}).log || {};
   const estMin = () => (cur() || { minutes: 0 }).minutes;
   const real = h("div", { class: "sess-real", "aria-live": "polite" });
-  const save = (patch) => { setLog(wk, id, patch); paintReal(); };
+  const save = (patch) => { setLog(wk, id, patch); paintReal(); if (onChange) onChange(); };
 
   const timeField = (key, label) => {
     const input = h("input", { type: "time", id: `sess-${key}-${id}` });
@@ -1902,7 +2023,7 @@ function providencias(list) {
 function sessionTotals(list) {
   let est = 0, real = 0, n = 0, planned = 0;
   for (const b of list || []) {
-    if (!tracked(b)) continue;
+    if (!tracked(b) || b.extra) continue;
     planned += b.minutes;
     const m = realMinutes(b.log);
     if (m == null) continue;
@@ -1935,6 +2056,93 @@ function sessionSection(list) {
   grid.append(h("section", null, h("h4", null, `Providências${rows.length ? " · " + rows.length : ""}`),
     rows.length ? h("div", { class: "prov-list" }, rows) : h("p", { class: "sub" }, "Nada pendente anotado.")));
   return h("section", null, grid);
+}
+
+// "+ Já fiz": registra um estudo que aconteceu fora do plano, já como feito.
+let lastDoneType = "";
+function openDoneSheet() {
+  if (!editable()) return;
+  const ln = logicalNow();
+  const wk = state.weekStart;
+  if (wk > ln.week) { toast("Essa semana ainda não chegou. Volte pra semana atual pra registrar."); return; }
+  const types = state.types.filter((t) => !t.archived && CATS.some((c) => c.id === catOf(t)))
+    .sort((a, b) => (groupOf(a) === "estudo" ? 0 : 1) - (groupOf(b) === "estudo" ? 0 : 1));
+  if (!types.length) { toast("Nenhum tipo de estudo ainda. Crie um em Tipos…"); return; }
+  const cur = wk === ln.week;
+  const subj = h("select", { id: "done-subject" }, types.map((t) => h("option", { value: t.id }, t.name)));
+  if (types.some((t) => t.id === lastDoneType)) subj.value = lastDoneType;
+  const daySel = h("select", { id: "done-day" }, DAY_FULL.map((d, i) => {
+    if (cur && i > ln.day) return null;
+    const dt = parseIso(addDays(wk, i));
+    const rel = cur && i === ln.day ? " (hoje)" : cur && i === ln.day - 1 ? " (ontem)" : "";
+    return h("option", { value: i }, `${d} ${dt.getDate()}/${dt.getMonth() + 1}${rel}`);
+  }));
+  daySel.value = String(cur ? ln.day : 0);
+  const ini = h("input", { type: "time", id: "done-ini" });
+  const fim = h("input", { type: "time", id: "done-fim" });
+  const what = h("input", { type: "text", id: "done-what", maxlength: "160", placeholder: "Ex.: parte do trabalho de AED", autocomplete: "off" });
+  const warn = h("p", { class: "warn-box", role: "alert", hidden: true });
+  const saveBtn = h("button", { type: "button", class: "accent" }, "Salvar");
+  let confirmed = null;
+  const reset = () => { confirmed = null; warn.hidden = true; saveBtn.textContent = "Salvar"; };
+  [subj, daySel, ini, fim].forEach((n) => n.addEventListener("input", reset));
+
+  const save = () => {
+    if (!editable()) return;
+    const t = typeById(subj.value);
+    const a0 = parseHM(ini.value), z0 = parseHM(fim.value);
+    if (!t) return;
+    if (a0 == null || z0 == null) { toast("Preencha o início e o término."); (a0 == null ? ini : fim).focus(); return; }
+    // madrugada conta no fim do dia anterior, como o resto do quadro
+    const a = a0 < START_MIN ? a0 + 1440 : a0;
+    let z = z0 < START_MIN ? z0 + 1440 : z0;
+    if (z <= a) { toast("O término precisa ser depois do início."); fim.focus(); return; }
+    if (z > END_MIN) { toast("O quadro vai das 07:00 à 01:30. Ajuste o horário."); return; }
+    const day = Number(daySel.value);
+    if (cur && day === ln.day && a > logicalNow().min) { toast("Esse horário ainda não chegou."); return; }
+    const slot = Math.floor((a - START_MIN) / SLOT_MIN);
+    const s0 = slotStartMin(slot);
+    const minutes = Math.min(END_MIN - s0, Math.max(STEP, Math.ceil((z - s0) / STEP) * STEP));
+    const list = blocksOf(wk);
+    const hits = list.filter((b) => overlaps({ day, slot, minutes }, b));
+    const key = hits.map((b) => b.id).join(",");
+    if (hits.length && confirmed !== key) {
+      const names = hits.map((b) => `“${blockTitle(b)}” (${blockRange(b)})`).join(" e ");
+      warn.textContent = `Esse horário já tem ${names}. Se foi esse bloco que você fez, abra ele e marque como feito. Pra tirar ${hits.length > 1 ? "eles" : "ele"} do quadro e pôr este registro no lugar, toque em Trocar e salvar.`;
+      warn.hidden = false;
+      saveBtn.textContent = "Trocar e salvar";
+      confirmed = key;
+      return;
+    }
+    const txt = what.value.trim();
+    const log = { s: "feito", inicio: hhmm(a0), termino: hhmm(z0), at: new Date().toISOString() };
+    if (txt) log.resultado = txt;
+    state.weeks[wk] = list.filter((b) => !hits.includes(b));
+    state.weeks[wk].push({ id: uid(), typeId: t.id, day, slot, minutes, text: txt || t.name, extra: true, log });
+    lastDoneType = t.id;
+    saveWeek(wk);
+    closeModal();
+    if (state.view === "day") state.selDay = day;
+    render();
+    if (state.view !== "month") scrollToMin(s0);
+    toast(`Registrado: ${fmtDur(z - a)} de ${t.name}.`);
+  };
+  saveBtn.addEventListener("click", save);
+  what.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); save(); } });
+
+  openModal(h("div", { style: { display: "contents" } },
+    h("h3", null, "Já fiz"),
+    h("p", { class: "muted" }, `Um estudo que aconteceu fora do plano${cur ? "" : `, na semana de ${weekLabel(wk)}`}. Entra no quadro como feito e conta como extra, sem mexer no planejado.`),
+    h("label", { class: "field" }, h("span", null, "Matéria"), subj),
+    h("label", { class: "field" }, h("span", null, "Dia"), daySel),
+    h("div", { class: "sess-times" },
+      h("label", { class: "field" }, h("span", null, "Início"), ini),
+      h("div", { class: "field" }, h("label", { class: "sess-lbl", for: "done-fim" }, "Término"),
+        h("div", { class: "tnow" }, fim, h("button", { type: "button", "aria-label": "Término: agora", onclick: () => { fim.value = nowHM(); reset(); } }, "agora")))),
+    h("label", { class: "field" }, h("span", null, "O que eu fiz"), what),
+    warn,
+    h("div", { class: "btn-row" }, h("span"), h("div", { class: "end" },
+      h("button", { type: "button", onclick: closeModal }, "Cancelar"), saveBtn))));
 }
 
 function dayLabel(d, ln) {
@@ -2003,13 +2211,14 @@ async function openSummary() {
 function weekSection(wk, list, ln) {
   const sec = h("section", null, h("h4", null, `Semana de ${weekLabel(wk)}`));
   const by = {};
-  for (const c of CATS) by[c.id] = { planned: 0, logged: 0, done: 0, pending: 0, future: 0, swappedIn: 0 };
+  for (const c of CATS) by[c.id] = { planned: 0, logged: 0, done: 0, pending: 0, future: 0, swappedIn: 0, extra: 0 };
   let effective = 0, anyTracked = false;
   for (const b of list || []) {
     const x = by[blockCat(b)];
     if (!x) continue;
     anyTracked = true;
     const st = b.log && statusById(b.log.s);
+    if (b.extra) { if (st) { x.extra += b.minutes * st.score; effective += b.minutes * st.score; } continue; }
     if (!st && !blockEnded(wk, b, ln)) { x.future += b.minutes; continue; }
     if (!st) { x.pending++; continue; }
     x.logged += b.minutes;
@@ -2024,12 +2233,13 @@ function weekSection(wk, list, ln) {
   sec.append(h("p", { class: "sub" }, `Estudo que rendeu, contando trocas: ${fmtH(effective)}. Barras: quanto do plano de cada prioridade foi cumprido.`));
   for (const c of CATS) {
     const x = by[c.id];
-    if (!x.logged && !x.pending && !x.future && !x.swappedIn) continue;
+    if (!x.logged && !x.pending && !x.future && !x.swappedIn && !x.extra) continue;
     const pct = x.logged ? Math.round((x.done / x.logged) * 100) : null;
     const bits = [];
     if (x.logged) bits.push(`${fmtH(x.done)} de ${fmtH(x.logged)} registradas`);
     if (x.pending) bits.push(plural(x.pending, "bloco sem registro", "blocos sem registro"));
     if (x.swappedIn) bits.push(`+${fmtH(x.swappedIn)} vindas de trocas`);
+    if (x.extra) bits.push(`+${fmtH(x.extra)} fora do plano`);
     if (x.future) bits.push(`${fmtH(x.future)} ainda por vir`);
     sec.append(meterRow(c.short, pct, bits.join(" · "), "c-" + c.id));
   }
@@ -2047,7 +2257,7 @@ function trendSection(weeks, ln) {
     if (k < from || k > ln.week) continue;
     for (const b of list || []) {
       const st = b.log && statusById(b.log.s);
-      if (!st || !tracked(b)) continue;
+      if (!st || !tracked(b) || b.extra) continue;
       logs.push({ wk: k, b, st, cat: blockCat(b) });
     }
   }
@@ -2488,7 +2698,7 @@ function recolorAll(pid) {
   for (const list of Object.values(state.weeks)) for (const b of list || []) minutesByType[b.typeId] = (minutesByType[b.typeId] || 0) + b.minutes;
   const groups = new Map();
   for (const t of state.types) {
-    if (t.kind === "estudo-bonus") continue;
+    if (t.kind === "estudo-bonus" || groupOf(t) === "fixo") continue;   // fixos aparecem em tom neutro
     const k = keyOf(t);
     if (!groups.has(k)) groups.set(k, { order: groups.size, minutes: 0, types: [] });
     const g = groups.get(k);
@@ -2549,15 +2759,29 @@ function catSelect(t) {
   sel.value = catOf(t);
   return sel;
 }
+function groupSelect(t) {
+  const sel = h("select", {
+    id: "grp-" + t.id,
+    "aria-label": `Grupo de ${t.name}`,
+    onchange: () => {
+      if (!editable()) { sel.value = groupOf(t); return; }
+      t.group = sel.value;
+      saveTypes();
+      render();
+    },
+  }, GROUPS.map((g) => h("option", { value: g.id }, g.name)));
+  sel.value = groupOf(t);
+  return sel;
+}
 function openTypesSheet() {
   const list = h("div", { class: "type-list" });
   let editing = null;
   const paint = () => {
     const tones = paletteTones(paletteById(state.palette || DEFAULT_PALETTE));
     list.replaceChildren(...state.types.flatMap((t) => {
-      const builtin = BUILTIN_TYPES.some((b) => b.id === t.id);
-      const btn = builtin ? h("span", { class: "tag" }, "padrão")
-        : t.archived
+      const cs = t.archived ? null : catSelect(t);
+      if (cs) cs.addEventListener("change", () => paint());   // a prioridade pode mudar o grupo sugerido
+      const btn = t.archived
           ? h("button", { type: "button", onclick: () => { if (!editable()) return; delete t.archived; saveTypes(); render(); paint(); } }, "Restaurar")
           : h("button", { type: "button", class: "danger", onclick: () => { if (!editable()) return; t.archived = true; if (armedType === t.id) disarm(); saveTypes(); render(); paint(); } }, "Remover");
       const row = h("div", { class: "type-row" + (t.archived ? " archived" : "") },
@@ -2567,7 +2791,8 @@ function openTypesSheet() {
           onclick: () => { editing = editing === t.id ? null : t.id; paint(); },
         }),
         h("span", { class: "nm" }, t.name),
-        t.archived ? null : catSelect(t),
+        cs,
+        t.archived ? null : groupSelect(t),
         btn
       );
       if (editing !== t.id) return [row];
@@ -2598,7 +2823,7 @@ function openTypesSheet() {
   } }, name, color, h("button", { type: "submit", class: "accent" }, "Criar"));
   openModal(h("div", { style: { display: "contents" } },
     h("h3", null, "Tipos de bloco"),
-    h("p", { class: "muted" }, "Toque na cor de um tipo pra trocar. A prioridade (Graduação, DS/IC ou CodeLabs) define o que entra no tracking. Remover só tira o tipo da lista; os blocos que já estão no quadro continuam iguais."),
+    h("p", { class: "muted" }, "Cada tipo tem uma prioridade (Graduação, DS/IC, CodeLabs ou sem tracking) e um grupo. Os Fixos, como refeições e aulas, aparecem no quadro num tom neutro só; a cor deles vale pras entregas. Toque na cor pra trocar. Remover só tira o tipo da barra; os blocos que já estão no quadro continuam iguais."),
     list,
     h("div", { class: "field" }, h("span", null, "Novo tipo"), form)
   ));
@@ -2660,7 +2885,7 @@ function startDrag(opts, ev) {
   Object.assign(ghost.style, {
     width: width + "px",
     height: Math.max(12, (opts.minutes / SLOT_MIN) * H - 2) + "px",
-    background: t.color, border: t.border, color: t.textColor || "#111",
+    ...skin(t),
   });
   document.body.append(ghost);
   drag = { ...opts, ghost, x: ev.clientX, y: ev.clientY, target: null, preview: null, grabX: opts.grabX ?? width / 2, grabY: opts.grabY ?? H / 2 };
@@ -3008,7 +3233,7 @@ function render() {
   const ss = studyStats();
   const pend = pendingBlocks().length;
   const pill = $("#study");
-  pill.replaceChildren(...(pend ? [h("span", { class: "pdot", "aria-hidden": "true" })] : []), `Estudo: ${fmtH(ss.done)} de ${fmtH(ss.planned)}`);
+  pill.replaceChildren(...(pend ? [h("span", { class: "pdot", "aria-hidden": "true" })] : []), `Estudo: ${fmtH(ss.done)} de ${fmtH(ss.planned)}${ss.extra ? ` · +${fmtH(ss.extra)} extra` : ""}`);
   pill.title = pend ? `${pend} bloco${pend > 1 ? "s" : ""} sem registro. Toque pra ver o resumo.` : "Horas de estudo que renderam, de quantas foram planejadas. Toque pra ver o resumo.";
   renderTasksBadge();
   renderPalette();
@@ -3019,15 +3244,27 @@ function render() {
 
 function renderPalette() {
   const wrap = $("#chips");
-  wrap.replaceChildren(...state.types.filter((t) => !t.archived).map((t) => {
+  const live = state.types.filter((t) => !t.archived);
+  const chipFor = (t) => {
     const chip = h("button", { type: "button", class: "chip" + (t.hatch ? " hatch" : "") + (armedType === t.id ? " armed" : ""), "aria-pressed": armedType === t.id ? "true" : "false" }, t.name);
-    Object.assign(chip.style, { background: t.color, border: t.border, color: t.textColor || "#111" });
+    Object.assign(chip.style, skin(t));
     gesture(chip, {
       onTap: () => arm(t.id),
       onDrag: (ev) => startDrag({ kind: "new", typeId: t.id, minutes: defaultMinutes(t), label: t.name }, ev),
     });
     return chip;
-  }));
+  };
+  wrap.replaceChildren(...GROUPS.map((g) => {
+    const list = live.filter((t) => groupOf(t) === g.id);
+    if (!list.length) return null;
+    const open = !!state.grpOpen[g.id];
+    return h("section", { class: "grp" },
+      h("button", {
+        type: "button", class: "grp-head", "aria-expanded": open ? "true" : "false",
+        onclick: () => { state.grpOpen[g.id] = !open; savePrefs(); renderPalette(); },
+      }, h("span", { class: "car", "aria-hidden": "true" }, open ? "▾" : "▸"), g.name, h("span", { class: "n" }, String(list.length))),
+      open ? h("div", { class: "grp-body" }, list.map(chipFor)) : null);
+  }).filter(Boolean));
 }
 
 function renderBoardHead() {
@@ -3113,15 +3350,15 @@ function renderBlock(b, H, nowMin) {
   const pend = isTracked && !st && blockEnded(state.weekStart, b);
   const node = h("div", {
     class: "block" + (t.hatch ? " hatch" : "") + (height < 30 ? " tiny" : "") + (current ? " current" : "")
-      + (st || pend ? " has-badge" : "") + (st && st.id === "pulei" ? " skipped" : ""),
+      + (st || pend ? " has-badge" : "") + (st && st.id === "pulei" ? " skipped" : "") + (b.extra ? " extra" : ""),
     "data-id": b.id, tabindex: "0", role: "button", title: b.text,
-    "aria-label": `${b.text}, ${blockRange(b)}${st ? ", " + st.label : pend ? ", sem registro" : ""}`,
+    "aria-label": `${b.text}, ${blockRange(b)}${st ? ", " + st.label : pend ? ", sem registro" : ""}${b.extra ? ", fora do plano" : ""}`,
   });
-  Object.assign(node.style, { top: b.slot * H + 1 + "px", height: height + "px", background: t.color, border: t.border, color: t.textColor || "#111" });
+  Object.assign(node.style, { top: b.slot * H + 1 + "px", height: height + "px", ...skin(t) });
   const handle = h("div", { class: "rh", "aria-hidden": "true" });
   handle.addEventListener("pointerdown", (e) => startResize(e, b, node));
   node.append(h("span", { class: "bt" }, blockTitle(b)));
-  if (st) node.append(h("span", { class: "badge st-" + st.id, "aria-hidden": "true" }, st.icon));
+  if (st) node.append(h("span", { class: "badge st-" + st.id, "aria-hidden": "true" }, b.extra && st.id === "feito" ? "+" : st.icon));
   else if (pend) node.append(h("span", { class: "badge pending", "aria-hidden": "true" }, "?"));
   if (height >= 40) node.append(h("span", { class: "br" }, blockRange(b)));
   node.append(handle);
@@ -3222,6 +3459,7 @@ $("#btn-prev").onclick = () => (state.view === "month" ? shiftMonth(-1) : goToWe
 $("#btn-next").onclick = () => (state.view === "month" ? shiftMonth(1) : goToWeek(addDays(state.weekStart, 7)));
 $("#btn-today").onclick = goToday;
 $("#btn-minimo").onclick = addMinimoViavel;
+$("#btn-done").onclick = openDoneSheet;
 $("#btn-duplicate").onclick = () => { closeMenu(); duplicateWeek(); };
 $("#btn-export").onclick = exportWeek;
 $("#btn-import").onclick = () => { closeMenu(); if (editable()) $("#import-file").click(); };
