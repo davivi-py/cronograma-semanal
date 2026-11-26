@@ -1022,7 +1022,7 @@ const BUILTIN_TYPES = [
   { id: "ancora", name: "Âncora fixa", color: "#1e3a5f", border: "3px solid #0b1f38", textColor: "#fff", kind: "ancora", blockKind: "compromisso_externo", kindConfirmed: false },
   { id: "estudo", name: "Estudo confiável", color: "#0f766e", border: "2px solid #115e59", textColor: "#fff", kind: "estudo", blockKind: "estudo", kindConfirmed: true },
   { id: "estudo-bonus", name: "Estudo bônus", color: "#ccfbf1", border: "2px dashed #0f766e", textColor: "#134e4a", kind: "estudo-bonus", blockKind: "estudo", kindConfirmed: true },
-  { id: "yuki", name: "Passeio Yuki", color: "#f59e0b", border: "2px solid #b45309", textColor: "#1c1917", kind: "yuki", blockKind: "pessoal", kindConfirmed: false },
+  { id: "yuki", name: "Passeio com o cachorro", color: "#f59e0b", border: "2px solid #b45309", textColor: "#1c1917", kind: "yuki", blockKind: "pessoal", kindConfirmed: false },
   { id: "sono", name: "Sono", color: "#7c3aed", border: "2px solid #5b21b6", textColor: "#fff", kind: "sono", blockKind: "pessoal", kindConfirmed: false },
   { id: "friccao", name: "Zona de fricção", color: "#dc2626", border: "2px solid #7f1d1d", textColor: "#fff", kind: "friccao", hatch: true, blockKind: "pessoal", kindConfirmed: false },
   { id: "abertura", name: "Abertura sem meta", color: "#2dd4bf", border: "2px solid #0f766e", textColor: "#134e4a", kind: "abertura", defaultMinutes: 15, blockKind: "planejamento", kindConfirmed: false },
@@ -3227,10 +3227,10 @@ function loadMonthWeeks(weeks) {
     });
   }
 }
-// Sono e Passeio Yuki aparecem todo dia e poluem a grade
+// Sono e o passeio com o cachorro aparecem todo dia e poluem a grade
 function monthHidden(b) {
   const t = typeById(b.typeId);
-  return !!t && (MONTH_HIDDEN_KINDS.includes(t.kind) || ["sono", "passeio yuki"].includes(norm(t.name)));
+  return !!t && (MONTH_HIDDEN_KINDS.includes(t.kind) || ["sono", "passeio yuki", "passeio com o cachorro"].includes(norm(t.name)));
 }
 function typeEdge(t) { return (String(t.border || "").match(/#[0-9a-f]{3,8}/i) || [t.color])[0]; }
 function monthDot(color, edge, cls) {

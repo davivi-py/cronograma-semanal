@@ -33,7 +33,7 @@ const BUILTIN_TYPES = [
   },
   {
     id: "yuki",
-    name: "Passeio Yuki",
+    name: "Passeio com o cachorro",
     color: "#f59e0b",
     border: "2px solid #b45309",
     textColor: "#1c1917",

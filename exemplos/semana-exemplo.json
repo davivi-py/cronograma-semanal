@@ -29,7 +29,7 @@
   },
   {
    "id": "yuki",
-   "name": "Passeio Yuki",
+   "name": "Passeio com o cachorro",
    "color": "#f59e0b",
    "kind": "yuki",
    "blockKind": "pessoal",
@@ -150,7 +150,7 @@
     "day": 0,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -241,7 +241,7 @@
     "day": 1,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -334,7 +334,7 @@
     "day": 2,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -428,7 +428,7 @@
     "day": 3,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -521,7 +521,7 @@
     "day": 4,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -665,7 +665,7 @@
     "day": 0,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -759,7 +759,7 @@
     "day": 1,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -853,7 +853,7 @@
     "day": 2,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -946,7 +946,7 @@
     "day": 3,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1041,7 +1041,7 @@
     "day": 4,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1185,7 +1185,7 @@
     "day": 0,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1277,7 +1277,7 @@
     "day": 1,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1369,7 +1369,7 @@
     "day": 2,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1461,7 +1461,7 @@
     "day": 3,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1555,7 +1555,7 @@
     "day": 4,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1702,7 +1702,7 @@
     "day": 0,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1794,7 +1794,7 @@
     "day": 1,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1891,7 +1891,7 @@
     "day": 2,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -1983,7 +1983,7 @@
     "day": 3,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
@@ -2064,7 +2064,7 @@
     "day": 4,
     "slot": 2,
     "minutes": 30,
-    "text": "Passeio Yuki",
+    "text": "Passeio com o cachorro",
     "kind": "pessoal"
    },
    {
