@@ -1,0 +1,2232 @@
+{
+ "version": 2,
+ "exportedAt": "2026-11-26T19:00:00.000Z",
+ "weekStart": "2026-11-23",
+ "types": [
+  {
+   "id": "ancora",
+   "name": "Âncora fixa",
+   "color": "#1e3a5f",
+   "kind": "ancora",
+   "blockKind": "compromisso_externo",
+   "kindConfirmed": true
+  },
+  {
+   "id": "estudo",
+   "name": "Estudo confiável",
+   "color": "#0f766e",
+   "kind": "estudo",
+   "blockKind": "estudo",
+   "kindConfirmed": true
+  },
+  {
+   "id": "estudo-bonus",
+   "name": "Estudo bônus",
+   "color": "#ccfbf1",
+   "kind": "estudo-bonus",
+   "blockKind": "estudo",
+   "kindConfirmed": true
+  },
+  {
+   "id": "yuki",
+   "name": "Passeio Yuki",
+   "color": "#f59e0b",
+   "kind": "yuki",
+   "blockKind": "pessoal",
+   "kindConfirmed": true
+  },
+  {
+   "id": "sono",
+   "name": "Sono",
+   "color": "#7c3aed",
+   "kind": "sono",
+   "blockKind": "pessoal",
+   "kindConfirmed": true,
+   "archived": true
+  },
+  {
+   "id": "friccao",
+   "name": "Zona de fricção",
+   "color": "#dc2626",
+   "kind": "friccao",
+   "hatch": true,
+   "blockKind": "lazer",
+   "kindConfirmed": true
+  },
+  {
+   "id": "abertura",
+   "name": "Abertura sem meta",
+   "color": "#2dd4bf",
+   "kind": "abertura",
+   "defaultMinutes": 15,
+   "blockKind": "planejamento",
+   "kindConfirmed": true
+  },
+  {
+   "id": "t-calc",
+   "name": "Estudo - Cálculo II",
+   "kind": "custom",
+   "blockKind": "estudo",
+   "kindConfirmed": true,
+   "color": "#589c77",
+   "subject": "Cálculo II"
+  },
+  {
+   "id": "t-ed",
+   "name": "Estudo - Estrutura de Dados",
+   "kind": "custom",
+   "blockKind": "estudo",
+   "kindConfirmed": true,
+   "color": "#0501e4",
+   "subject": "Estrutura de Dados"
+  },
+  {
+   "id": "t-arq",
+   "name": "Estudo - ArqComp",
+   "kind": "custom",
+   "blockKind": "estudo",
+   "kindConfirmed": true,
+   "color": "#ff5e0a",
+   "subject": "ArqComp"
+  },
+  {
+   "id": "t-ic",
+   "name": "Projeto de IC",
+   "kind": "custom",
+   "blockKind": "estudo",
+   "kindConfirmed": true,
+   "color": "#14048e",
+   "subject": "IC",
+   "cat": "ds"
+  },
+  {
+   "id": "t-code",
+   "name": "CodeLabs",
+   "kind": "custom",
+   "blockKind": "compromisso_externo",
+   "kindConfirmed": false,
+   "color": "#0746c8",
+   "subject": "CodeLabs"
+  },
+  {
+   "id": "t-aula",
+   "name": "Aula",
+   "kind": "custom",
+   "blockKind": "aula",
+   "kindConfirmed": true,
+   "color": "#bb354c",
+   "group": "fixo"
+  },
+  {
+   "id": "t-almoco",
+   "name": "Almoço",
+   "kind": "custom",
+   "blockKind": "refeicao",
+   "kindConfirmed": true,
+   "color": "#ecb74c"
+  },
+  {
+   "id": "t-jantar",
+   "name": "Jantar",
+   "kind": "custom",
+   "blockKind": "refeicao",
+   "kindConfirmed": true,
+   "color": "#f9f3b0"
+  },
+  {
+   "id": "t-lazer",
+   "name": "Lazer",
+   "kind": "custom",
+   "blockKind": "lazer",
+   "kindConfirmed": true,
+   "color": "#eadfd8"
+  }
+ ],
+ "weeks": {
+  "2026-11-02": [
+   {
+    "id": "b269e0d37",
+    "typeId": "yuki",
+    "day": 0,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b0c5c7fd0",
+    "typeId": "t-calc",
+    "day": 0,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b1818e811",
+    "typeId": "t-ed",
+    "day": 0,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · PRATICAR remoção na ABB",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b9531985d",
+    "typeId": "t-almoco",
+    "day": 0,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b099950d8",
+    "typeId": "t-ic",
+    "day": 0,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b6f03675a",
+    "typeId": "estudo-bonus",
+    "day": 0,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b11e20b8f",
+    "typeId": "t-jantar",
+    "day": 0,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b6cad4a26",
+    "typeId": "t-aula",
+    "day": 0,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "bf29d0da9",
+    "typeId": "yuki",
+    "day": 1,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b95e60af5",
+    "typeId": "t-ed",
+    "day": 1,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Estrutura de Dados · PRATICAR remoção na ABB",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-02T23:00:00.000Z",
+     "r": "atraso"
+    }
+   },
+   {
+    "id": "bf9ebdacc",
+    "typeId": "t-arq",
+    "day": 1,
+    "slot": 8,
+    "minutes": 60,
+    "text": "ArqComp · modos de endereçamento · META: resumo de 1 página",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bdbc496cb",
+    "typeId": "t-almoco",
+    "day": 1,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b6b4cb242",
+    "typeId": "t-calc",
+    "day": 1,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b8a6a63ec",
+    "typeId": "t-code",
+    "day": 1,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b92276658",
+    "typeId": "t-jantar",
+    "day": 1,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "bae97ba94",
+    "typeId": "t-aula",
+    "day": 1,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b301850c5",
+    "typeId": "yuki",
+    "day": 2,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b34b9b5df",
+    "typeId": "t-arq",
+    "day": 2,
+    "slot": 4,
+    "minutes": 90,
+    "text": "ArqComp · modos de endereçamento · META: resumo de 1 página",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-02T23:00:00.000Z",
+     "r": "atraso"
+    }
+   },
+   {
+    "id": "bc6f87718",
+    "typeId": "t-ic",
+    "day": 2,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Projeto de IC · limpar a base e gerar os gráficos",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-02T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "bec66a787",
+    "typeId": "t-almoco",
+    "day": 2,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b4cbd87ad",
+    "typeId": "t-ed",
+    "day": 2,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bcb5c7427",
+    "typeId": "estudo-bonus",
+    "day": 2,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-02T23:00:00.000Z",
+     "r": "longo"
+    }
+   },
+   {
+    "id": "b3e7d1bfb",
+    "typeId": "t-jantar",
+    "day": 2,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b930d6eaf",
+    "typeId": "t-aula",
+    "day": 2,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b86734721",
+    "typeId": "yuki",
+    "day": 3,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "bbabced20",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Projeto de IC · limpar a base e gerar os gráficos",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-02T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "b12bd4ace",
+    "typeId": "t-calc",
+    "day": 3,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b830e07bc",
+    "typeId": "t-almoco",
+    "day": 3,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "bc1d3fcff",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b7d2caf82",
+    "typeId": "t-code",
+    "day": 3,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bab1031d0",
+    "typeId": "t-jantar",
+    "day": 3,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b5051c1cc",
+    "typeId": "t-aula",
+    "day": 3,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "bb1fee08f",
+    "typeId": "yuki",
+    "day": 4,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "bcc011cdd",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bd70820fe",
+    "typeId": "t-ed",
+    "day": 4,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · APRENDER árvore AVL · META: inserir 1..8 à mão",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-02T23:00:00.000Z",
+     "r": "imprevisto"
+    }
+   },
+   {
+    "id": "bf1d69ed6",
+    "typeId": "t-almoco",
+    "day": 4,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b10a3d6b2",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b72158370",
+    "typeId": "estudo-bonus",
+    "day": 4,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bb774eb52",
+    "typeId": "t-jantar",
+    "day": 4,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b58d5563d",
+    "typeId": "t-aula",
+    "day": 4,
+    "slot": 24,
+    "minutes": 100,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "bf0ce5835",
+    "typeId": "t-ed",
+    "day": 5,
+    "slot": 6,
+    "minutes": 90,
+    "text": "Estrutura de Dados · Trabalho 2 · META: versão que compila",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b5affb229",
+    "typeId": "t-lazer",
+    "day": 5,
+    "slot": 14,
+    "minutes": 360,
+    "text": "Lazer · sábado livre",
+    "kind": "lazer"
+   },
+   {
+    "id": "b9c653938",
+    "typeId": "t-calc",
+    "day": 6,
+    "slot": 16,
+    "minutes": 90,
+    "text": "Cálculo II · revisão para a prova",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b7e62aa0a",
+    "typeId": "abertura",
+    "day": 6,
+    "slot": 26,
+    "minutes": 30,
+    "text": "Planejamento da semana · revisar feito × planejado",
+    "kind": "planejamento",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-02T23:00:00.000Z"
+    }
+   }
+  ],
+  "2026-11-09": [
+   {
+    "id": "bbd628881",
+    "typeId": "yuki",
+    "day": 0,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b6472f1a3",
+    "typeId": "t-calc",
+    "day": 0,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "cansaco"
+    }
+   },
+   {
+    "id": "b64e50cad",
+    "typeId": "t-ed",
+    "day": 0,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "b66836886",
+    "typeId": "t-almoco",
+    "day": 0,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b3571810a",
+    "typeId": "t-ic",
+    "day": 0,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "cansaco"
+    }
+   },
+   {
+    "id": "b298cb3a5",
+    "typeId": "estudo-bonus",
+    "day": 0,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b0d75985d",
+    "typeId": "t-jantar",
+    "day": 0,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b068739fa",
+    "typeId": "t-aula",
+    "day": 0,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "bdfd43f37",
+    "typeId": "yuki",
+    "day": 1,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b6050914a",
+    "typeId": "t-ed",
+    "day": 1,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Estrutura de Dados · PRATICAR remoção na ABB",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "longo"
+    }
+   },
+   {
+    "id": "bf4998d7c",
+    "typeId": "t-arq",
+    "day": 1,
+    "slot": 8,
+    "minutes": 60,
+    "text": "ArqComp · simulador do processador (1/2)",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b9a2ef80f",
+    "typeId": "t-almoco",
+    "day": 1,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b1f7296ab",
+    "typeId": "t-calc",
+    "day": 1,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "atraso"
+    }
+   },
+   {
+    "id": "bd953ee26",
+    "typeId": "t-code",
+    "day": 1,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b774b15d7",
+    "typeId": "t-jantar",
+    "day": 1,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b7bdc968b",
+    "typeId": "t-aula",
+    "day": 1,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b15fc899e",
+    "typeId": "yuki",
+    "day": 2,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "bbfeaa155",
+    "typeId": "t-arq",
+    "day": 2,
+    "slot": 4,
+    "minutes": 90,
+    "text": "ArqComp · modos de endereçamento · META: resumo de 1 página",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bb12aa1f6",
+    "typeId": "t-ic",
+    "day": 2,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Projeto de IC · limpar a base e gerar os gráficos",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "b842e7fc2",
+    "typeId": "t-almoco",
+    "day": 2,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b873be078",
+    "typeId": "t-ed",
+    "day": 2,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Estrutura de Dados · APRENDER árvore AVL · META: inserir 1..8 à mão",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b87322e25",
+    "typeId": "estudo-bonus",
+    "day": 2,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "longo"
+    }
+   },
+   {
+    "id": "bdd02de92",
+    "typeId": "t-jantar",
+    "day": 2,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b2ac34446",
+    "typeId": "t-aula",
+    "day": 2,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "bc59db916",
+    "typeId": "yuki",
+    "day": 3,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "ba2eddbbd",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Projeto de IC · limpar a base e gerar os gráficos",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "imprevisto"
+    }
+   },
+   {
+    "id": "bda45e18a",
+    "typeId": "t-calc",
+    "day": 3,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "bce5b2a92",
+    "typeId": "t-almoco",
+    "day": 3,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b3a0b9965",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · limpar a base e gerar os gráficos",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b8483f8b8",
+    "typeId": "t-code",
+    "day": 3,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "b4787f93b",
+    "typeId": "t-jantar",
+    "day": 3,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b42594052",
+    "typeId": "t-aula",
+    "day": 3,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "bf4de2c08",
+    "typeId": "yuki",
+    "day": 4,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "bf979d04a",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b38703800",
+    "typeId": "t-ed",
+    "day": 4,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · APRENDER árvore AVL · META: inserir 1..8 à mão",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b3a12917c",
+    "typeId": "t-almoco",
+    "day": 4,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b5675f6ad",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · APRENDER integrais por partes · META: 10 exercícios da lista",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b007d1034",
+    "typeId": "estudo-bonus",
+    "day": 4,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-09T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "ba4a45eff",
+    "typeId": "t-jantar",
+    "day": 4,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b330698a1",
+    "typeId": "t-aula",
+    "day": 4,
+    "slot": 24,
+    "minutes": 100,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "be39639be",
+    "typeId": "t-ed",
+    "day": 5,
+    "slot": 6,
+    "minutes": 90,
+    "text": "Estrutura de Dados · Trabalho 2 · META: versão que compila",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "ba2c68e45",
+    "typeId": "t-lazer",
+    "day": 5,
+    "slot": 14,
+    "minutes": 360,
+    "text": "Lazer · sábado livre",
+    "kind": "lazer"
+   },
+   {
+    "id": "bb8c9817a",
+    "typeId": "t-calc",
+    "day": 6,
+    "slot": 16,
+    "minutes": 90,
+    "text": "Cálculo II · revisão para a prova",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b7691b06f",
+    "typeId": "abertura",
+    "day": 6,
+    "slot": 26,
+    "minutes": 30,
+    "text": "Planejamento da semana · revisar feito × planejado",
+    "kind": "planejamento",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-09T23:00:00.000Z"
+    }
+   }
+  ],
+  "2026-11-16": [
+   {
+    "id": "b806c10b5",
+    "typeId": "yuki",
+    "day": 0,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b82b33599",
+    "typeId": "t-calc",
+    "day": 0,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bc6c91b92",
+    "typeId": "t-ed",
+    "day": 0,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "imprevisto"
+    }
+   },
+   {
+    "id": "b9bca3cb7",
+    "typeId": "t-almoco",
+    "day": 0,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b2c1eea1f",
+    "typeId": "t-ic",
+    "day": 0,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bb9a6442e",
+    "typeId": "estudo-bonus",
+    "day": 0,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b8e752fdf",
+    "typeId": "t-jantar",
+    "day": 0,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b8e317041",
+    "typeId": "t-aula",
+    "day": 0,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b8f6f915f",
+    "typeId": "yuki",
+    "day": 1,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b30f97058",
+    "typeId": "t-ed",
+    "day": 1,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Estrutura de Dados · APRENDER árvore AVL · META: inserir 1..8 à mão",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bc5b2e75a",
+    "typeId": "t-arq",
+    "day": 1,
+    "slot": 8,
+    "minutes": 60,
+    "text": "ArqComp · modos de endereçamento · META: resumo de 1 página",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b81f98b52",
+    "typeId": "t-almoco",
+    "day": 1,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b1038f0b5",
+    "typeId": "t-calc",
+    "day": 1,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b46f5a1b4",
+    "typeId": "t-code",
+    "day": 1,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bceaf4915",
+    "typeId": "t-jantar",
+    "day": 1,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "bed84e91e",
+    "typeId": "t-aula",
+    "day": 1,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b729135bd",
+    "typeId": "yuki",
+    "day": 2,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b1f229dd0",
+    "typeId": "t-arq",
+    "day": 2,
+    "slot": 4,
+    "minutes": 90,
+    "text": "ArqComp · simulador do processador (1/2)",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b50e40d54",
+    "typeId": "t-ic",
+    "day": 2,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Projeto de IC · limpar a base e gerar os gráficos",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "longo"
+    }
+   },
+   {
+    "id": "babd0d7fb",
+    "typeId": "t-almoco",
+    "day": 2,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b12b80aed",
+    "typeId": "t-ed",
+    "day": 2,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bab6286cd",
+    "typeId": "estudo-bonus",
+    "day": 2,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "bc8b007ee",
+    "typeId": "t-jantar",
+    "day": 2,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "ba906922f",
+    "typeId": "t-aula",
+    "day": 2,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b249a4584",
+    "typeId": "yuki",
+    "day": 3,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "bf7b103df",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "b18189af4",
+    "typeId": "t-calc",
+    "day": 3,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Cálculo II · APRENDER integrais por partes · META: 10 exercícios da lista",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "be28af604",
+    "typeId": "t-almoco",
+    "day": 3,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "bd51b1815",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "atraso"
+    }
+   },
+   {
+    "id": "b83feb17b",
+    "typeId": "t-code",
+    "day": 3,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b56d050cd",
+    "typeId": "t-jantar",
+    "day": 3,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b321c5296",
+    "typeId": "t-aula",
+    "day": 3,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b518ae452",
+    "typeId": "yuki",
+    "day": 4,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b5daf106d",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "atraso"
+    }
+   },
+   {
+    "id": "b8dd63cb9",
+    "typeId": "t-ed",
+    "day": 4,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "b04a10547",
+    "typeId": "t-almoco",
+    "day": 4,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "bf5f554ed",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "be05b3e13",
+    "typeId": "estudo-bonus",
+    "day": 4,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b15850a03",
+    "typeId": "t-jantar",
+    "day": 4,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b459c945c",
+    "typeId": "t-aula",
+    "day": 4,
+    "slot": 24,
+    "minutes": 100,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b2e7a26e9",
+    "typeId": "t-ed",
+    "day": 5,
+    "slot": 6,
+    "minutes": 90,
+    "text": "Estrutura de Dados · Trabalho 2 · META: versão que compila",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "cansaco"
+    }
+   },
+   {
+    "id": "bc17a9262",
+    "typeId": "t-lazer",
+    "day": 5,
+    "slot": 14,
+    "minutes": 360,
+    "text": "Lazer · sábado livre",
+    "kind": "lazer"
+   },
+   {
+    "id": "bd1dcec53",
+    "typeId": "t-calc",
+    "day": 6,
+    "slot": 16,
+    "minutes": 90,
+    "text": "Cálculo II · revisão para a prova",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-16T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "bf22d2882",
+    "typeId": "abertura",
+    "day": 6,
+    "slot": 26,
+    "minutes": 30,
+    "text": "Planejamento da semana · revisar feito × planejado",
+    "kind": "planejamento",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-16T23:00:00.000Z"
+    }
+   }
+  ],
+  "2026-11-23": [
+   {
+    "id": "bc26e7a42",
+    "typeId": "yuki",
+    "day": 0,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "bac127e93",
+    "typeId": "t-calc",
+    "day": 0,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (1/2) · META: questões 1 a 6",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-23T23:00:00.000Z",
+     "r": "longo"
+    }
+   },
+   {
+    "id": "b401d68fb",
+    "typeId": "t-ed",
+    "day": 0,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b03edb920",
+    "typeId": "t-almoco",
+    "day": 0,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b83a4e629",
+    "typeId": "t-ic",
+    "day": 0,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b72723b9c",
+    "typeId": "estudo-bonus",
+    "day": 0,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "ba66d58b5",
+    "typeId": "t-jantar",
+    "day": 0,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "ba81100a1",
+    "typeId": "t-aula",
+    "day": 0,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "be3838b9e",
+    "typeId": "yuki",
+    "day": 1,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b3ac4da9a",
+    "typeId": "t-ed",
+    "day": 1,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Estrutura de Dados · PRATICAR remoção na ABB",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "ba2cf62ba",
+    "typeId": "t-arq",
+    "day": 1,
+    "slot": 8,
+    "minutes": 60,
+    "text": "ArqComp · modos de endereçamento · META: resumo de 1 página",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-23T23:00:00.000Z",
+     "r": "imprevisto"
+    }
+   },
+   {
+    "id": "b213bca7f",
+    "typeId": "t-almoco",
+    "day": 1,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "be13e213e",
+    "typeId": "t-calc",
+    "day": 1,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · APRENDER integrais por partes · META: 10 exercícios da lista",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "feito",
+     "inicio": "14:05",
+     "termino": "15:40",
+     "resultado": "fiz as questões 1 a 6",
+     "providencia": "tirar dúvida da 5 com o monitor",
+     "at": "2026-11-24T18:45:00.000Z"
+    }
+   },
+   {
+    "id": "b6e4505f5",
+    "typeId": "t-code",
+    "day": 1,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b0e2ec40a",
+    "typeId": "t-jantar",
+    "day": 1,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "bf88ede10",
+    "typeId": "t-aula",
+    "day": 1,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b99498ac4",
+    "typeId": "yuki",
+    "day": 2,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b0b94af3a",
+    "typeId": "t-arq",
+    "day": 2,
+    "slot": 4,
+    "minutes": 90,
+    "text": "ArqComp · simulador do processador (1/2)",
+    "kind": "estudo",
+    "subject": "ArqComp",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-23T23:00:00.000Z",
+     "r": "atraso"
+    }
+   },
+   {
+    "id": "b28541424",
+    "typeId": "t-ic",
+    "day": 2,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b72218fdc",
+    "typeId": "t-almoco",
+    "day": 2,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b52d31e1b",
+    "typeId": "t-ed",
+    "day": 2,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "be1e437b7",
+    "typeId": "estudo-bonus",
+    "day": 2,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo",
+    "log": {
+     "s": "feito",
+     "at": "2026-11-23T23:00:00.000Z"
+    }
+   },
+   {
+    "id": "b37c60e98",
+    "typeId": "t-jantar",
+    "day": 2,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b2ed65411",
+    "typeId": "t-aula",
+    "day": 2,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b55d85e8d",
+    "typeId": "yuki",
+    "day": 3,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b79823eb2",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC"
+   },
+   {
+    "id": "ba7f0c99e",
+    "typeId": "t-calc",
+    "day": 3,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II",
+    "log": {
+     "s": "pulei",
+     "at": "2026-11-23T23:00:00.000Z",
+     "r": "distracao"
+    }
+   },
+   {
+    "id": "bc6b789ef",
+    "typeId": "t-almoco",
+    "day": 3,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b16fa1421",
+    "typeId": "t-ic",
+    "day": 3,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Projeto de IC · ler 1 artigo + anotar",
+    "kind": "estudo",
+    "subject": "IC"
+   },
+   {
+    "id": "b0aaaaf81",
+    "typeId": "t-code",
+    "day": 3,
+    "slot": 18,
+    "minutes": 60,
+    "text": "CodeLabs · reunião do projeto de extensão",
+    "kind": "compromisso_externo",
+    "subject": "CodeLabs"
+   },
+   {
+    "id": "b05c22d3f",
+    "typeId": "t-jantar",
+    "day": 3,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b3b996870",
+    "typeId": "t-aula",
+    "day": 3,
+    "slot": 24,
+    "minutes": 220,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "bc0236e49",
+    "typeId": "yuki",
+    "day": 4,
+    "slot": 2,
+    "minutes": 30,
+    "text": "Passeio Yuki",
+    "kind": "pessoal"
+   },
+   {
+    "id": "b98b81c66",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 4,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II"
+   },
+   {
+    "id": "b7e834904",
+    "typeId": "t-ed",
+    "day": 4,
+    "slot": 8,
+    "minutes": 60,
+    "text": "Estrutura de Dados · Trabalho 2: busca em árvore · META: casos de teste",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados"
+   },
+   {
+    "id": "b250e7b34",
+    "typeId": "t-almoco",
+    "day": 4,
+    "slot": 11,
+    "minutes": 60,
+    "text": "Almoço",
+    "kind": "refeicao"
+   },
+   {
+    "id": "ba098d691",
+    "typeId": "t-calc",
+    "day": 4,
+    "slot": 14,
+    "minutes": 90,
+    "text": "Cálculo II · Lista 4 (2/2) · META: entregar",
+    "kind": "estudo",
+    "subject": "Cálculo II"
+   },
+   {
+    "id": "bcdff5a1c",
+    "typeId": "estudo-bonus",
+    "day": 4,
+    "slot": 18,
+    "minutes": 60,
+    "text": "Revisão leve · reler o caderno do dia",
+    "kind": "estudo"
+   },
+   {
+    "id": "b3add6527",
+    "typeId": "t-jantar",
+    "day": 4,
+    "slot": 22,
+    "minutes": 60,
+    "text": "Jantar",
+    "kind": "refeicao"
+   },
+   {
+    "id": "b07fa22f7",
+    "typeId": "t-aula",
+    "day": 4,
+    "slot": 24,
+    "minutes": 100,
+    "text": "Aula",
+    "kind": "aula"
+   },
+   {
+    "id": "b1adbce5d",
+    "typeId": "t-ed",
+    "day": 5,
+    "slot": 6,
+    "minutes": 90,
+    "text": "Estrutura de Dados · Trabalho 2 · META: versão que compila",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados"
+   },
+   {
+    "id": "bd5f860c3",
+    "typeId": "t-lazer",
+    "day": 5,
+    "slot": 14,
+    "minutes": 360,
+    "text": "Lazer · sábado livre",
+    "kind": "lazer"
+   },
+   {
+    "id": "b8efba442",
+    "typeId": "t-calc",
+    "day": 6,
+    "slot": 16,
+    "minutes": 90,
+    "text": "Cálculo II · revisão para a prova",
+    "kind": "estudo",
+    "subject": "Cálculo II"
+   },
+   {
+    "id": "ba0b55864",
+    "typeId": "abertura",
+    "day": 6,
+    "slot": 26,
+    "minutes": 30,
+    "text": "Planejamento da semana · revisar feito × planejado",
+    "kind": "planejamento"
+   },
+   {
+    "id": "bextra01",
+    "typeId": "t-ed",
+    "day": 1,
+    "slot": 31,
+    "minutes": 60,
+    "text": "Trabalho 2: corrigi o bug da remoção",
+    "kind": "estudo",
+    "subject": "Estrutura de Dados",
+    "extra": true,
+    "log": {
+     "s": "feito",
+     "inicio": "22:30",
+     "termino": "23:30",
+     "resultado": "Trabalho 2: corrigi o bug da remoção",
+     "at": "2026-11-25T02:35:00.000Z"
+    }
+   }
+  ]
+ },
+ "tasks": [
+  {
+   "id": "k1",
+   "title": "Lista 4 - Integrais",
+   "typeId": "t-calc",
+   "due": "2026-11-27T23:59",
+   "done": false,
+   "doneAt": null,
+   "createdAt": "2026-11-20T10:00:00.000Z"
+  },
+  {
+   "id": "k2",
+   "title": "Trabalho 2 - Árvores de busca",
+   "typeId": "t-ed",
+   "due": "2026-12-01T23:59",
+   "done": false,
+   "doneAt": null,
+   "createdAt": "2026-11-20T10:00:00.000Z"
+  },
+  {
+   "id": "k3",
+   "title": "Relatório parcial da IC",
+   "typeId": "t-ic",
+   "due": "2026-12-04T18:00",
+   "done": false,
+   "doneAt": null,
+   "createdAt": "2026-11-20T10:00:00.000Z"
+  },
+  {
+   "id": "k4",
+   "title": "Lista 3 - Séries",
+   "typeId": "t-calc",
+   "due": "2026-11-20T23:59",
+   "done": true,
+   "doneAt": "2026-11-20T21:00:00.000Z",
+   "createdAt": "2026-11-10T10:00:00.000Z"
+  }
+ ]
+}

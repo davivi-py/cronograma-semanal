@@ -1,3 +1,7 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Quadro da semana</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -134,6 +138,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { height: 100%; box-sizing: border-box; }
 body {
   height: 100%;
@@ -853,6 +858,17 @@ body.view-month .layout { grid-template-columns: 1fr; grid-template-rows: 1fr; }
 .grp-body { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { width: auto; max-width: 100%; padding: 6px 10px; }
 .block.extra { border-style: dashed !important; }
+.type-row select.unconf { border-style: dashed; border-color: var(--warn); }
+.new-type .new-kind { grid-column: 1 / -1; }
+.tag-kind {
+  font: 700 0.78rem/1.2 "Patrick Hand", "Segoe Print", ui-rounded, system-ui, sans-serif;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  white-space: nowrap;
+}
 .tag-extra {
   font: 700 0.78rem/1.2 "Patrick Hand", "Segoe Print", ui-rounded, system-ui, sans-serif;
   padding: 2px 9px;
@@ -1000,16 +1016,29 @@ const PREFS_KEY = "quadro-prefs-v2";
 const CACHE_KEY = "quadro-cache-v2";
 const LOCAL_KEY = "quadro-semana-v1";
 
+// `kind` nos tipos é o comportamento visual antigo (âncora, fricção…). A classe que vai pro banco
+// (estudo, aula, refeição…) fica em `blockKind`; `kindConfirmed:false` marca o que foi palpite.
 const BUILTIN_TYPES = [
-  { id: "ancora", name: "Âncora fixa", color: "#1e3a5f", border: "3px solid #0b1f38", textColor: "#fff", kind: "ancora" },
-  { id: "estudo", name: "Estudo confiável", color: "#0f766e", border: "2px solid #115e59", textColor: "#fff", kind: "estudo" },
-  { id: "estudo-bonus", name: "Estudo bônus", color: "#ccfbf1", border: "2px dashed #0f766e", textColor: "#134e4a", kind: "estudo-bonus" },
-  { id: "yuki", name: "Passeio Yuki", color: "#f59e0b", border: "2px solid #b45309", textColor: "#1c1917", kind: "yuki" },
-  { id: "sono", name: "Sono", color: "#7c3aed", border: "2px solid #5b21b6", textColor: "#fff", kind: "sono" },
-  { id: "friccao", name: "Zona de fricção", color: "#dc2626", border: "2px solid #7f1d1d", textColor: "#fff", kind: "friccao", hatch: true },
-  { id: "abertura", name: "Abertura sem meta", color: "#2dd4bf", border: "2px solid #0f766e", textColor: "#134e4a", kind: "abertura", defaultMinutes: 15 },
+  { id: "ancora", name: "Âncora fixa", color: "#1e3a5f", border: "3px solid #0b1f38", textColor: "#fff", kind: "ancora", blockKind: "compromisso_externo", kindConfirmed: false },
+  { id: "estudo", name: "Estudo confiável", color: "#0f766e", border: "2px solid #115e59", textColor: "#fff", kind: "estudo", blockKind: "estudo", kindConfirmed: true },
+  { id: "estudo-bonus", name: "Estudo bônus", color: "#ccfbf1", border: "2px dashed #0f766e", textColor: "#134e4a", kind: "estudo-bonus", blockKind: "estudo", kindConfirmed: true },
+  { id: "yuki", name: "Passeio Yuki", color: "#f59e0b", border: "2px solid #b45309", textColor: "#1c1917", kind: "yuki", blockKind: "pessoal", kindConfirmed: false },
+  { id: "sono", name: "Sono", color: "#7c3aed", border: "2px solid #5b21b6", textColor: "#fff", kind: "sono", blockKind: "pessoal", kindConfirmed: false },
+  { id: "friccao", name: "Zona de fricção", color: "#dc2626", border: "2px solid #7f1d1d", textColor: "#fff", kind: "friccao", hatch: true, blockKind: "pessoal", kindConfirmed: false },
+  { id: "abertura", name: "Abertura sem meta", color: "#2dd4bf", border: "2px solid #0f766e", textColor: "#134e4a", kind: "abertura", defaultMinutes: 15, blockKind: "planejamento", kindConfirmed: false },
 ];
-const MINIMO_TYPE = { id: "minimo-viavel", name: "Mínimo viável", color: "#86efac", border: "2px solid #16a34a", textColor: "#14532d", kind: "minimo", defaultMinutes: 20 };
+const MINIMO_TYPE = { id: "minimo-viavel", name: "Mínimo viável", color: "#86efac", border: "2px solid #16a34a", textColor: "#14532d", kind: "minimo", defaultMinutes: 20, blockKind: "estudo", kindConfirmed: true };
+// Classe de cada bloco (enum fechado). É derivada do tipo, nunca digitada.
+const BLOCK_KINDS = [
+  { id: "estudo", label: "Estudo" },
+  { id: "aula", label: "Aula" },
+  { id: "compromisso_externo", label: "Compromisso" },
+  { id: "refeicao", label: "Refeição" },
+  { id: "pessoal", label: "Pessoal" },
+  { id: "lazer", label: "Lazer" },
+  { id: "planejamento", label: "Planejamento" },
+];
+const kindLabel = (k) => (BLOCK_KINDS.find((x) => x.id === k) || { label: k }).label;
 const FALLBACK_TYPE = { name: "?", color: "#94a3b8", border: "1px solid #64748b", textColor: "#111" };
 
 // ---------- tracking: prioridades e registros ----------
@@ -1289,6 +1318,26 @@ function catOf(t) {
   return "";
 }
 function blockCat(b) { return catOf(typeById(b.typeId)); }
+// ---------- classe dos blocos (kind) ----------
+function kindOfType(t) { return t && BLOCK_KINDS.some((k) => k.id === t.blockKind) ? t.blockKind : null; }
+// "loggable" = entra no tracking do quadro (tem prioridade). O check-in noturno usa a mesma regra.
+function loggableType(t) { return CATS.some((c) => c.id === catOf(t)); }
+function blockKindOf(b) {
+  const k = kindOfType(typeById(b.typeId));
+  return k || (BLOCK_KINDS.some((x) => x.id === b.kind) ? b.kind : null);
+}
+// Copia a classe (e a matéria) do tipo pra cada bloco antes de salvar. Tipo sem classe não mexe no bloco.
+function stampKinds(list) {
+  if (mode === "sync" && !typesReady) return list;
+  for (const b of list) {
+    const t = typeById(b.typeId);
+    const k = kindOfType(t);
+    if (!k) continue;
+    b.kind = k;
+    if (t.subject) b.subject = t.subject;
+  }
+  return list;
+}
 // Sem grupo escolhido: tipo com tracking é Estudo, os de técnica vão pra Outros, o resto é Fixo.
 function groupOf(t) {
   if (!t || t === FALLBACK_TYPE) return "outros";
@@ -1370,8 +1419,74 @@ const writers = {};
 const stash = {};
 let writeError = false;
 
-function saveTypes() { persist("config/types", () => ({ types: state.types, palette: state.palette })); }
-function saveWeek(wk = state.weekStart) { persist("weeks/" + wk, () => ({ blocks: blocksOf(wk) })); }
+function saveTypes() { persist("config/types", () => ({ types: state.types, palette: state.palette })); mirrorTypes(); }
+function saveWeek(wk = state.weekStart) {
+  persist("weeks/" + wk, () => ({ blocks: stampKinds(blocksOf(wk)) }));
+  maybeCheckin();
+}
+
+// ---------- contrato pro agente do check-in (só o quadro escreve; o agente só lê) ----------
+// types/<id>: um doc por tipo, com a classe e se pede registro. Descrição completa em meta/schema.
+const mirrorSent = {};
+function typeDoc(t) {
+  const kind = kindOfType(t);
+  return {
+    id: t.id, label: t.name, kind, subject: t.subject || null, color: t.color || null,
+    loggable: loggableType(t), kindConfirmed: !!kind && t.kindConfirmed === true,
+    prioridade: catOf(t) || null, group: groupOf(t), archived: !!t.archived,
+  };
+}
+function mirrorTypes() {
+  if (mode !== "sync" || readonly) return;
+  for (const t of state.types) {
+    const body = typeDoc(t);
+    const j = JSON.stringify(body);
+    if (mirrorSent[t.id] === j) continue;
+    mirrorSent[t.id] = j;
+    persist("types/" + t.id, () => body);
+  }
+}
+// meta/checkin-hoje: os blocos do dia lógico (madrugada conta no dia anterior) já separados.
+function checkinDoc(ln) {
+  const list = blocksOf(ln.week).filter((b) => b.day === ln.day).sort((a, b) => a.slot - b.slot);
+  const pendentes = [], registrados = [], semClasse = [], ignorados = [];
+  const contagem = { feito: 0, pulei: 0, outro: 0 };
+  for (const b of list) {
+    const t = typeById(b.typeId);
+    const kind = blockKindOf(b);
+    const base = {
+      id: b.id, titulo: blockTitle(b), kind, subject: (t && t.subject) || b.subject || null,
+      start: hhmm(slotStartMin(b.slot)), end: hhmm(blockEndMin(b)), minutes: b.minutes,
+    };
+    if (!t || !kind) { semClasse.push({ ...base, text: b.text, typeId: b.typeId, typeLabel: t ? t.name : null }); continue; }
+    if (!loggableType(t)) { ignorados.push({ titulo: base.titulo, kind, start: base.start }); continue; }
+    base.kindConfirmed = t.kindConfirmed === true;
+    if (hasStatus(b)) {
+      registrados.push({ ...base, s: b.log.s, r: b.log.r || null, resultado: b.log.resultado || null, extra: !!b.extra });
+      contagem[b.log.s === "feito" ? "feito" : b.log.s === "pulei" ? "pulei" : "outro"]++;
+    } else {
+      pendentes.push({ ...base, text: b.text, day: b.day, terminou: blockEnded(ln.week, b, ln) });
+    }
+  }
+  contagem.pendentes = pendentes.length;
+  return {
+    v: 1, date: ln.iso, diaSemana: DAY_FULL[ln.day].toLowerCase(), day: ln.day, weekDoc: "weeks/" + ln.week,
+    pendentes, registrados, semClasse, ignorados, contagem, geradoPor: "quadro",
+  };
+}
+let checkinSent = "";
+function maybeCheckin() {
+  if (mode !== "sync" || readonly || !typesReady) return;
+  const ln = logicalNow();
+  const w = writers["weeks/" + ln.week];
+  const fresh = (subscribedWeek === ln.week && weekReady[ln.week]) || (w && (w.busy || w.pending));
+  if (!fresh) return;
+  const body = checkinDoc(ln);
+  const j = JSON.stringify(body);
+  if (j === checkinSent) return;
+  checkinSent = j;
+  persist("meta/checkin-hoje", () => ({ ...body, geradoEm: new Date().toISOString() }));
+}
 
 function persist(path, bodyFn) {
   if (mode === "local") { saveLocal(); return; }
@@ -1461,6 +1576,7 @@ function applySnap(path, snap) {
   if (typesReady && weekReady[state.weekStart] && !readonly && !Object.values(writers).some((x) => x.busy)) setSync(writeError ? "error" : "ok");
   writeCache();
   render();
+  maybeCheckin();
 }
 function applyStash(path) {
   if (interacting) return;
@@ -1517,10 +1633,16 @@ function placeBlock(typeId, day, slot, extra = {}) {
   if (!editable()) return null;
   const t = typeById(typeId);
   if (!t) return null;
+  if (!kindOfType(t)) {
+    toast(`Antes, escolha a classe de “${t.name}” (estudo, aula, refeição…) em Tipos….`);
+    openTypesSheet();
+    return null;
+  }
   const minutes = extra.minutes ?? defaultMinutes(t);
   if (slotStartMin(slot) + minutes > END_MIN) { toast("Não cabe antes da 01:30."); return null; }
   if (collides({ day, slot, minutes })) { toast("Esse horário já está ocupado."); return null; }
-  const block = { id: uid(), typeId, day, slot, minutes, text: extra.text ?? t.name };
+  const block = { id: uid(), typeId, day, slot, minutes, text: extra.text ?? t.name, kind: kindOfType(t) };
+  if (t.subject) block.subject = t.subject;
   currentBlocks().push(block);
   saveWeek();
   render();
@@ -1814,7 +1936,10 @@ function openBlockSheet(id) {
 
   openModal(h("div", { style: { display: "contents" } },
     h("h3", null, h("span", { class: "sw", style: { background: t.color } }), t.name,
+      blockKindOf(b) ? h("span", { class: "tag-kind", title: "Classe do tipo (muda em Tipos…)" }, kindLabel(blockKindOf(b))) : null,
       b.extra ? h("span", { class: "tag-extra" }, "fora do plano") : null),
+    kindOfType(typeById(b.typeId)) ? null : h("p", { class: "warn-box" }, "Esse tipo ainda não tem classe (estudo, aula, refeição…). ",
+      h("button", { type: "button", class: "sess-fill", onclick: () => { closeModal(); openTypesSheet(); } }, "Escolher em Tipos…")),
     h("label", { class: "field" }, h("span", null, "O que é"), text),
     full,
     h("div", { class: "row3" },
@@ -2773,6 +2898,27 @@ function groupSelect(t) {
   sel.value = groupOf(t);
   return sel;
 }
+// classe muda: carimba de novo os blocos da semana aberta que usam esse tipo
+function onKindChanged(t) {
+  saveTypes();
+  if (currentBlocks().some((b) => b.typeId === t.id) && (mode !== "sync" || weekReady[state.weekStart])) saveWeek();
+  render();
+}
+function kindSelect(t) {
+  const sel = h("select", {
+    id: "kind-" + t.id,
+    "aria-label": `Classe de ${t.name}`,
+    class: kindOfType(t) && t.kindConfirmed !== true ? "unconf" : null,
+    onchange: () => {
+      if (!editable() || !sel.value) { sel.value = kindOfType(t) || ""; return; }
+      t.blockKind = sel.value;
+      t.kindConfirmed = true;
+      onKindChanged(t);
+    },
+  }, kindOfType(t) ? null : h("option", { value: "" }, "Classe?"), BLOCK_KINDS.map((k) => h("option", { value: k.id }, k.label)));
+  sel.value = kindOfType(t) || "";
+  return sel;
+}
 function openTypesSheet() {
   const list = h("div", { class: "type-list" });
   let editing = null;
@@ -2791,6 +2937,10 @@ function openTypesSheet() {
           onclick: () => { editing = editing === t.id ? null : t.id; paint(); },
         }),
         h("span", { class: "nm" }, t.name),
+        t.archived ? null : kindSelect(t),
+        !t.archived && kindOfType(t) && t.kindConfirmed !== true
+          ? h("button", { type: "button", title: "Essa classe foi um palpite. Toque se estiver certa.", onclick: () => { if (!editable()) return; t.kindConfirmed = true; saveTypes(); paint(); } }, "Confirmar")
+          : null,
         cs,
         t.archived ? null : groupSelect(t),
         btn
@@ -2807,23 +2957,29 @@ function openTypesSheet() {
   paint();
   const name = h("input", { type: "text", id: "new-type-name", placeholder: "Nome do tipo", maxlength: "40" });
   const color = h("input", { type: "color", id: "new-type-color", value: nextTone(), "aria-label": "Cor" });
+  const newKind = h("select", { id: "new-type-kind", "aria-label": "Classe do novo tipo", class: "new-kind" },
+    h("option", { value: "" }, "Classe…"), BLOCK_KINDS.map((k) => h("option", { value: k.id }, k.label)));
   const form = h("form", { class: "new-type", onsubmit: (e) => {
     e.preventDefault();
     if (!editable()) return;
     const nm = name.value.trim();
     if (!nm) { name.focus(); return; }
-    const t = { id: uid(), name: nm, kind: "custom" };
+    if (!newKind.value) { newKind.focus(); toast("Escolha a classe do tipo: estudo, aula, refeição…"); return; }
+    const t = { id: uid(), name: nm, kind: "custom", blockKind: newKind.value, kindConfirmed: true };
+    // estudo sempre entra no tracking; se o nome não disser a prioridade, vai como Graduação
+    if (t.blockKind === "estudo" && !catOf(t)) t.cat = "grad";
     setTypeColor(t, color.value);
     state.types.push(t);
     name.value = "";
+    newKind.value = "";
     color.value = nextTone();
     saveTypes();
     render();
     paint();
-  } }, name, color, h("button", { type: "submit", class: "accent" }, "Criar"));
+  } }, name, color, h("button", { type: "submit", class: "accent" }, "Criar"), newKind);
   openModal(h("div", { style: { display: "contents" } },
     h("h3", null, "Tipos de bloco"),
-    h("p", { class: "muted" }, "Cada tipo tem uma prioridade (Graduação, DS/IC, CodeLabs ou sem tracking) e um grupo. Os Fixos, como refeições e aulas, aparecem no quadro num tom neutro só; a cor deles vale pras entregas. Toque na cor pra trocar. Remover só tira o tipo da barra; os blocos que já estão no quadro continuam iguais."),
+    h("p", { class: "muted" }, "Cada tipo tem uma classe (estudo, aula, refeição…), que o check-in da noite usa pra saber o que perguntar; as com contorno tracejado foram palpite, toque em Confirmar se estiver certo. Também tem uma prioridade (Graduação, DS/IC, CodeLabs ou sem tracking: só os com prioridade pedem feito/não feito) e um grupo. Os Fixos, como refeições e aulas, aparecem no quadro num tom neutro só; a cor deles vale pras entregas. Toque na cor pra trocar. Remover só tira o tipo da barra; os blocos que já estão no quadro continuam iguais."),
     list,
     h("div", { class: "field" }, h("span", null, "Novo tipo"), form)
   ));
@@ -3500,7 +3656,7 @@ let lastPending = -1;
 setInterval(() => {
   if (drag || resizing) return;
   const ln = logicalNow();
-  if (ln.iso !== lastLogicalIso) { lastLogicalIso = ln.iso; render(); return; }
+  if (ln.iso !== lastLogicalIso) { lastLogicalIso = ln.iso; render(); maybeCheckin(); return; }
   // quando um bloco termina, ele ganha a marca de "sem registro"
   const pc = pendingBlocks(ln).length;
   if (pc !== lastPending) { lastPending = pc; render(); return; }

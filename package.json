@@ -1,0 +1,12 @@
+{
+  "name": "cronograma-semanal",
+  "private": true,
+  "description": "Quadro da semana: cronograma de arrastar e soltar com tracking de estudo e um check-in noturno feito por IA.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "screenshots": "node scripts/screenshots.js"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

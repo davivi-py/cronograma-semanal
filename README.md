@@ -1,118 +1,185 @@
 # Quadro da semana
 
-Um cronograma semanal de arrastar e soltar que eu uso para organizar estudo, rotina e descanso. Eu monto a semana em blocos de 30 minutos, das 07:00 à 01:30, e acompanho no dia a dia pelo computador ou pelo celular.
+**Um cronograma semanal de arrastar e soltar que eu uso todo dia para organizar estudo e rotina, com tracking do que foi feito e um check-in noturno feito por IA que lê os meus dados.**
 
-Fiz porque os apps de agenda que testei eram pesados demais para o que eu precisava: ver a semana inteira de uma vez, mover blocos rápido e ter alguns atalhos para dias difíceis (tipo o botão de "mínimo viável").
+![HTML, CSS e JS puros](https://img.shields.io/badge/HTML%20%C2%B7%20CSS%20%C2%B7%20JS-sem%20framework-2b3245)
+![Sem dependências em produção](https://img.shields.io/badge/depend%C3%AAncias-0-15803d)
+[![testes](https://github.com/davivi-py/cronograma-semanal/actions/workflows/testes.yml/badge.svg)](https://github.com/davivi-py/cronograma-semanal/actions/workflows/testes.yml)
+![Feito com Claude](https://img.shields.io/badge/feito%20com-Claude-d97757)
 
-![Quadro da semana no computador](docs/quadro-desktop.png)
+![Visão da semana no computador](docs/quadro-desktop.png)
 
-## Funcionalidades
+> As capturas usam dados fictícios de [`exemplos/semana-exemplo.json`](exemplos/semana-exemplo.json).
 
-- **Grade semanal** de segunda a domingo, com blocos coloridos por tipo (âncora fixa, estudo, sono, refeições…)
-- **Arrastar e soltar** para criar blocos a partir da paleta e mover blocos entre dias e horários, com detecção de conflito
-- **Redimensionar** blocos puxando a borda de baixo
-- **Tipos personalizados** com nome e cor; a cor do texto é escolhida automaticamente pelo contraste
-- **Contador de horas de estudo** da semana
-- **Mínimo viável**: um botão que encaixa um bloco de 20 min no primeiro horário livre depois de agora
-- **Zona de fricção**: bloco com temporizador que avisa com som a hora de parar
-- **Duplicar semana** para a próxima, e **exportar/importar** tudo em JSON
-- Dados salvos no navegador (`localStorage`), sem backend
+## Por que eu fiz
 
-## Versão sincronizada (`artifact/`)
+Sou estudante de Sistemas de Informação no ICMC-USP, com aula à noite. Os apps de agenda que testei eram pesados demais para o que eu precisava: ver a semana inteira de uma vez, mover blocos rápido pelo celular e, principalmente, **saber depois se o plano foi cumprido**. Planejar eu já planejava; o que faltava era olhar para trás com dados.
 
-Em `artifact/quadro-da-semana.html` fica a versão que eu uso no dia a dia. Ela roda como Artifact no claude.ai e tem tudo da versão original, mais:
+Então o quadro virou três coisas:
 
-**Uso em qualquer aparelho**
-- **Sincroniza** entre celular e computador, usando o banco de documentos da própria plataforma
-- **Pensada para o celular**: visão por dia, colocar blocos com toque, arrastar com toque longo e editar texto, dia, horário e duração numa janela
-- **Agora / Depois**: mostra o bloco atual, o próximo e quanto tempo falta, com uma linha marcando a hora atual
-- **Modo escuro** automático
-- **Paletas de cores**: nove combinações prontas que recolorem todos os tipos de uma vez, e dá pra ajustar a cor de cada tipo
+1. **um planejador** de blocos de 30 minutos, das 07:00 à 01:30;
+2. **um diário de execução**: cada bloco de estudo vira *feito* ou *não feito*, com motivo, horário real e o que ficou pendente;
+3. **uma fonte de dados para um agente de IA**, que toda noite lê o banco e me pergunta só o que ainda não foi registrado.
 
-**Barra de tipos em grupos**
-- Os tipos ficam em três grupos que abrem e fecham: **Fixos** (refeições, aulas, rotina), **Estudo** (uma matéria por tipo) e **Outros**
-- Os blocos fixos aparecem no quadro num tom neutro só, para o estudo se destacar em cor
-- O grupo de cada tipo é escolhido em **Tipos…**
+## O que ele faz
 
-**Tracking dos blocos de estudo**
-- **+ Já fiz** registra um estudo que aconteceu fora do plano: matéria, dia, início, término e o que foi feito. Ele entra no quadro como feito e conta como **extra**, sem mexer nas horas planejadas
-- Na ficha do bloco, **Feito / Não feito** fica sempre à vista; início, término, resultados e providências ficam em **Detalhes**, e as entregas da matéria numa seção recolhida
-- Cada tipo de bloco pode ter uma **prioridade** (Graduação, DS/IC ou CodeLabs); só os blocos com prioridade entram no tracking
-- Depois que um bloco passa, ele ganha um **?** e dá pra marcar como **feito** ou **não feito**, com um motivo opcional (cansaço, distração, imprevisto…)
-- O botão **Registrar N blocos** junta numa lista tudo o que já passou e ainda não foi marcado
-- O contador do topo mostra **horas feitas de horas planejadas** na semana
-- O **resumo** mostra quanto do plano foi cumprido por prioridade, as últimas 4 semanas, o rendimento por turno, por dia e por tamanho de bloco, e os motivos mais comuns
+| Planejar | Acompanhar | Analisar |
+|---|---|---|
+| Arrastar e soltar (mouse e toque longo no celular), redimensionar, detecção de conflito | Agora / Depois com linha da hora atual | Horas feitas × planejadas na semana |
+| Tipos com cor, grupo (Fixos, Estudo, Outros) e **classe** (estudo, aula, refeição…) | *Feito / Não feito* com motivo (cansaço, distração, imprevisto…) | Rendimento por turno, por dia e por tamanho de bloco |
+| Visões de dia, semana e mês | Início, término, resultado e providências de cada sessão | Estimado × real e lista de providências |
+| Entregas com prazo, inclusive coladas direto do Moodle | **+ Já fiz** para estudo fora do plano (conta como extra) | Frases automáticas, como "o que mais atrapalha: celular / distração (11x)" |
+| **Mínimo viável**: encaixa 20 min no primeiro horário livre | Lista "Registrar N blocos" com tudo que passou sem registro | Últimas 4 semanas |
 
-<img src="docs/quadro-registro.png" alt="Lista para registrar os blocos que já passaram como feito ou não feito" width="300">
+<table>
+  <tr>
+    <td width="33%"><img src="docs/quadro-celular.png" alt="Visão do dia no celular, com o bloco atual e o próximo"></td>
+    <td width="33%"><img src="docs/quadro-registro.png" alt="Lista para registrar os blocos que já passaram"></td>
+    <td width="33%"><img src="docs/quadro-ficha.png" alt="Ficha de um bloco com o registro da sessão: início, término, resultado e providência"></td>
+  </tr>
+  <tr>
+    <td align="center">Celular: visão do dia</td>
+    <td align="center">Registrar o que passou</td>
+    <td align="center">Ficha do bloco (estimado × real)</td>
+  </tr>
+</table>
 
 ![Resumo do tracking com o plano cumprido por prioridade e as últimas semanas](docs/quadro-resumo.png)
 
-**Entregas**
-- Lista de trabalhos e tarefas com matéria e prazo, separada em atrasadas, próximos 7 dias e mais pra frente
-- **Colar do Moodle**: cole o texto da página de tarefas e as entregas com vencimento são reconhecidas sozinhas
-- As entregas aparecem como marcadores na grade, no dia e hora do prazo, e também quando você abre um bloco da matéria
+## Como funciona
 
-**Correções em relação à versão original**
-- a importação mescla as semanas em vez de apagar as outras;
-- o "mínimo viável" depois da meia-noite entra na noite certa;
-- remover um tipo não deixa blocos órfãos.
+```mermaid
+flowchart LR
+  subgraph Página["app/index.html (arquivo único, sem build)"]
+    UI[Grade, fichas e resumo] --> Estado[(estado em memória)]
+    Estado --> Fila[fila de escrita por documento]
+  end
+  Fila -- set --> Banco[(banco de documentos<br/>weeks · config/types · tasks)]
+  Banco -- onSnapshot --> Estado
+  Fila -- "também escreve" --> Contrato[(types/:id<br/>meta/checkin-hoje<br/>meta/schema)]
+  Agente["Agente agendado (Claude)<br/>todo dia às 23h"] -- "só leitura" --> Contrato
+  Agente --> Davi["mensagem completa<br/>+ notificação curta"]
+```
 
-<img src="docs/quadro-celular.png" alt="Versão sincronizada no celular" width="300">
+O quadro roda como um Artifact no claude.ai, que entrega um banco de documentos compartilhado entre os meus aparelhos. Sem esse banco (abrindo o arquivo direto no navegador), ele cai para `localStorage` e funciona igual, só que num aparelho.
 
-## Tecnologias
+Algumas decisões que valeram a pena:
 
-- HTML, CSS e JavaScript puros, sem frameworks, sem build e sem dependências
-- Drag and drop nativo (HTML5) na versão original; Pointer Events na versão sincronizada, para funcionar com mouse e toque
-- Web Audio API para o alarme do temporizador
+- **Um arquivo, zero dependências.** HTML, CSS e JavaScript puros, sem build. Abre em qualquer navegador e é fácil de publicar.
+- **Fila de escrita por documento.** Cada semana é um documento. Edições rápidas em sequência se juntam numa escrita só, e um *snapshot* do servidor não sobrescreve uma escrita minha que ainda está a caminho.
+- **Nada some no meio do gesto.** Atualizações que chegam de outro aparelho enquanto eu arrasto ou redimensiono um bloco ficam guardadas e só entram quando eu solto.
+- **Dia lógico.** O quadro vai até 01:30, então entre 00:00 e 06:59 o "hoje" ainda é o dia anterior, no quadro, no tracking e no check-in.
+- **Celular primeiro.** Pointer Events em vez do drag-and-drop do HTML5: toque curto abre, toque longo arrasta. Modo escuro automático, foco visível e `prefers-reduced-motion`.
+- **Compatível com dados antigos.** Campos novos são opcionais; blocos e registros de versões anteriores (inclusive estados que não existem mais, como *parcial*) continuam abrindo e contando.
 
-## Como rodar
+## Integração com IA: o check-in noturno
 
-Não precisa instalar nada. Clone o repositório e abra o `index.html` no navegador:
+Toda noite uma tarefa agendada do Claude lê o banco do quadro e me manda um check-in curto: o que ficou sem registro hoje e o que ainda falta anotar do dia.
+
+### Estudo de caso: quando o agente cobrou uma aula
+
+Na primeira semana, o agente me cobrou o registro de um bloco das 19h que era **aula**, não estudo. Investigando:
+
+1. **Causa:** os tipos eram identificados só por UUIDs, sem nenhum campo dizendo o que cada um era. O agente, que só lê o banco e não o código, teve que **adivinhar pelo texto** do bloco.
+2. **Mensagem cortada:** a resposta só ia por notificação, que corta em ~200 caracteres no iPhone.
+3. **Pergunta repetida:** ele perguntava coisas que eu já tinha registrado mais cedo.
+
+A correção foi tratar o banco como uma **API para um leitor que não vê o código**:
+
+- cada tipo ganhou uma **classe** de um conjunto fechado (`estudo`, `aula`, `compromisso_externo`, `refeicao`, `pessoal`, `lazer`, `planejamento`), obrigatória na interface e copiada para cada bloco ao salvar;
+- o que foi classificado por palpite na migração ficou marcado com `kindConfirmed: false` e ganhou um botão **Confirmar**, em vez de virar verdade em silêncio;
+- o próprio quadro publica um resumo pronto do dia, para o agente não precisar refazer conta de horário nem filtrar tipo:
+
+```json
+{
+  "date": "2026-11-26", "diaSemana": "quinta", "weekDoc": "weeks/2026-11-23",
+  "pendentes": [
+    { "titulo": "Projeto de IC", "kind": "estudo", "start": "14:00", "end": "15:30", "terminou": true }
+  ],
+  "registrados": [
+    { "titulo": "Cálculo II", "kind": "estudo", "start": "11:00", "end": "12:00", "s": "pulei", "r": "distracao" },
+    { "titulo": "CodeLabs", "kind": "compromisso_externo", "start": "16:00", "end": "17:00", "s": "feito", "kindConfirmed": false }
+  ],
+  "semClasse": [],
+  "ignorados": [ { "titulo": "Aula", "kind": "aula", "start": "19:00" } ],
+  "contagem": { "feito": 1, "pulei": 1, "pendentes": 1 }
+}
+```
+
+- `meta/schema` descreve tudo isso em texto para o agente ler primeiro, inclusive a regra **"se faltar a classe, pergunte; não adivinhe"**;
+- o check-in passou a sair em dois níveis: o texto completo como mensagem e só a pergunta principal na notificação.
+
+A migração mexeu em 12 semanas de dados (que ficam fora deste repositório) numa escrita atômica, com uma checagem por script de que nenhum registro (`log`) mudou.
+
+![Tipos com classe; o CodeLabs aparece tracejado porque a classe foi um palpite](docs/quadro-tipos.png)
+
+## Modelo de dados
+
+Cada semana é um documento `weeks/<segunda-feira AAAA-MM-DD>`:
+
+```json
+{ "blocks": [
+  { "id": "…", "typeId": "t-calc", "day": 1, "slot": 14, "minutes": 90,
+    "text": "Cálculo II · APRENDER integrais por partes · META: 10 exercícios",
+    "kind": "estudo", "subject": "Cálculo II",
+    "log": { "s": "feito", "inicio": "14:05", "termino": "15:40",
+             "resultado": "fiz as questões 1 a 6", "providencia": "tirar dúvida da 5" } }
+] }
+```
+
+- `day` vai de 0 (segunda) a 6 (domingo); o início é `07:00 + slot × 30 min`.
+- O texto usa ` · ` para separar partes, e `RÓTULO:` vira linha destacada na ficha.
+- `log.s` é `feito` ou `pulei`; `r` é o motivo. A duração real é calculada, nunca salva.
+- `extra: true` marca um bloco registrado pelo **+ Já fiz**.
+
+Outros documentos: `config/types` (tipos, cores e paleta), `tasks/<id>` (entregas), `types/<id>`, `meta/checkin-hoje` e `meta/schema` (o contrato para o agente, descrito acima).
+
+## Como eu construí (com IA)
+
+Este projeto foi feito em par com o **Claude** (no claude.ai e no Claude Code). A divisão foi mais ou menos esta:
+
+- **Eu:** defini o problema e as regras do meu dia (o que conta como estudo, o que é fixo, como quero registrar), decidi a interface, usei o quadro todo dia e voltei com o que não funcionou. Os relatos de bug e as mudanças de rumo, como o caso do check-in acima, partiram do uso real.
+- **O Claude:** escreveu a maior parte do código a partir dessas especificações, propôs as soluções técnicas (fila de escrita, dia lógico, contrato do banco) e testou as mudanças no navegador antes de publicar.
+- **Juntos:** cada mudança passou por especificação → implementação → teste com dados reais e fictícios → publicação, e o histórico de commits conta essa evolução.
+
+O que eu mais aprendi foi a **especificar bem**: descrever o problema com exemplos concretos, separar fato de palpite e definir o que não pode quebrar (os registros antigos, por exemplo) antes de pedir a solução.
+
+## Rodando localmente
+
+Não precisa instalar nada para usar:
 
 ```bash
 git clone https://github.com/davivi-py/cronograma-semanal.git
 cd cronograma-semanal
-# abra index.html no navegador (duplo clique já funciona)
+# abra app/index.html no navegador
 ```
 
-Para ver com dados de exemplo, clique em **Importar semana** e escolha o arquivo em `semanas-json/`.
+Para ver com dados, use **Semana ▾ → Importar backup** e escolha `exemplos/semana-exemplo.json`.
+
+Para rodar os testes e gerar as capturas (precisa de Node 22+):
+
+```bash
+npm install
+npx playwright install chromium
+npm test                # 5 testes de ponta a ponta num Chromium sem interface
+npm run screenshots     # refaz as imagens de docs/ com os dados de exemplo
+```
+
+Os testes abrem o quadro de verdade com o relógio fixo e um banco simulado, e conferem, entre outras coisas, que dados antigos sem classe ainda abrem e que salvar uma semana nunca altera um registro.
 
 ## Estrutura
 
 ```
-index.html                  página da versão original
-app.js                      estado, grade, arrastar e soltar, timer, importar/exportar
-styles.css                  estilos
-artifact/
-  quadro-da-semana.html     versão sincronizada: celular, tracking e entregas (página única)
-semanas-json/               exemplo de semana exportada
-docs/                       capturas de tela
+app/index.html            o quadro (versão atual, arquivo único)
+v1/                       primeira versão: só localStorage, drag-and-drop do HTML5
+exemplos/                 semana fictícia para importar e para as capturas
+tests/quadro.test.js      testes de ponta a ponta com Playwright
+scripts/screenshots.js    gera as imagens do README
+docs/                     capturas de tela
 ```
 
-## Formato dos dados
+## Próximos passos
 
-A exportação é um JSON com os tipos e os blocos de cada semana, identificada pela data da segunda-feira:
-
-```json
-{
-  "version": 1,
-  "weekStart": "2026-08-24",
-  "types": [{ "id": "estudo", "name": "Estudo confiável", "color": "#0f766e" }],
-  "weeks": {
-    "2026-08-24": [
-      { "id": "…", "typeId": "estudo", "day": 0, "slot": 18, "minutes": 120, "text": "Estudo confiável" }
-    ]
-  }
-}
-```
-
-`day` vai de 0 (segunda) a 6 (domingo), e `slot` é o índice do horário de início em passos de 30 min a partir das 07:00.
-
-Na versão sincronizada, o backup também leva as entregas (`tasks`), e cada bloco pode ter um registro de como foi:
-
-```json
-{ "id": "…", "typeId": "estudo", "day": 0, "slot": 18, "minutes": 120, "text": "Cálculo",
-  "log": { "s": "pulei", "r": "imprevisto", "at": "2026-10-26T22:00:00.000Z" } }
-```
-
-`s` é `feito` ou `pulei` (não feito); `r` é o motivo, quando tem. O `log` também guarda a sessão (`inicio`, `termino`, `resultado`, `providencia`). Um bloco criado pelo **+ Já fiz** leva `"extra": true`, e cada tipo pode ter um `group` (`fixo`, `estudo` ou `outros`). Registros antigos podem ter `parcial` ou `troquei`.
+- Funcionar offline como PWA, com fila de escrita persistente.
+- Exportar o histórico de registros em CSV para analisar em Python.
+- Sugerir o plano da semana seguinte a partir do que rendeu nas anteriores.
